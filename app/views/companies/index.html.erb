@@ -1,0 +1,11 @@
+<div class="container text-center">
+  <h1>Companies#index</h1>
+  <ul>
+    <% @companies.each do |company| %>
+      <li><%= link_to company.name, company_path(company.id) %></li>
+    <% end %>
+  </ul>
+  <%= link_to new_company_path do %>
+    <i class="fa-solid fa-plus"></i> Add a new task
+  <% end %>
+</div>
