@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_02_07_134308) do
+ActiveRecord::Schema[7.1].define(version: 2024_02_20_134631) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -26,6 +26,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_02_07_134308) do
     t.boolean "ruby_stack", default: true
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "status"
   end
 
   create_table "users", force: :cascade do |t|
