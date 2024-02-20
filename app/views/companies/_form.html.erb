@@ -3,8 +3,42 @@
   <div class="form-inputs">
     <%= f.input :name %>
   </div>
+
+  <div class="form-inputs">
+    <%= f.input :site %>
+  </div>
+
   <div class="form-inputs">
     <%= f.input :email %>
+  </div>
+
+  <div class="form-inputs">
+    <%= f.input :phone %>
+  </div>
+
+  <div class="form-inputs">
+    <%= f.input :category %>
+  </div>
+
+  <div class="form-inputs">
+    <%= f.input :segment %>
+  </div>
+
+  <div class="form-inputs">
+    <%= f.input :uf %>
+  </div>
+
+  <div class="form-inputs">
+    <%= f.label :status %>
+    <%= f.select :status, options_for_select([['Inativo', 'Inativo'], ['Ativo', 'Ativo'], ['Pendente', 'Pendente']], f.object.status), {}, { class: 'form-control' } %>
+  </div>
+  
+  <div class="form-inputs">
+    <%= f.input :job_offer %>
+  </div>
+
+  <div class="form-inputs">
+    <%= f.input :ruby_stack %>
   </div>
 
   <div class="form-actions btn btn-success">

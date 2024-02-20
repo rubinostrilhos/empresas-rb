@@ -1,6 +1,16 @@
 <div class="container text-center">
-  <h1>Companies#show</h1>
-  <h2><%= @company.name %></h2>
+  <h1><%= @company.name %></h1>
+  <ul>
+    <li><%= "Site: #{@company.site}"%></li>
+    <li><%= "E-mail: #{@company.email}"%></li>
+    <li><%= "Telefone: #{@company.phone}"%></li>
+    <li><%= "Categoria: #{@company.category}"%></li>
+    <li><%= "Setor: #{@company.segment}"%></li>
+    <li><%= "UF: #{@company.uf}"%></li>
+    <li><%= "Vagas?: #{@company.job_offer}"%></li>
+    <li><%= "Trabalha com Ruby?: #{@company.ruby_stack}"%></li>
+    <li><%= "Status: #{@company.status}"%></li>
+  </ul>
   <p><%= link_to "Edit company", edit_company_path(@company) %></p>
   <p><%= link_to "Back to companies", companies_path  %></p>
   <%= link_to company_path(@company),
