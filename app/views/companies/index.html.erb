@@ -1,11 +1,12 @@
 <div class="container text-center">
-  <h1>Companies#index</h1>
+  <h1>Empresas Ruby</h1>
+  <h5><%= "Total de empresas: #{@companies.size}" %></h5>
+  <%= link_to new_company_path do %>
+    <i class="fa-solid fa-plus mb-4"></i> Add a new task
+  <% end %>
   <ul>
     <% @companies.each do |company| %>
       <li><%= link_to company.name, company_path(company.id) %></li>
     <% end %>
   </ul>
-  <%= link_to new_company_path do %>
-    <i class="fa-solid fa-plus"></i> Add a new task
-  <% end %>
 </div>

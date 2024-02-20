@@ -9,7 +9,7 @@ class CreateCompanies < ActiveRecord::Migration[7.1]
       t.string :segment
       t.string :size
       t.boolean :job_offer, default: false
-      t.boolean :ruby_stack, default: true
+      t.boolean :ruby_stack, default: false
 
       t.timestamps
     end
