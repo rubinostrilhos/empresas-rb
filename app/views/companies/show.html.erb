@@ -11,10 +11,17 @@
     <li><%= "Trabalha com Ruby?: #{@company.ruby_stack}"%></li>
     <li><%= "Status: #{@company.status}"%></li>
   </ul>
-  <p><%= link_to "Edit company", edit_company_path(@company) %></p>
-  <p><%= link_to "Back to companies", companies_path  %></p>
+  <% if user_signed_in? %>
+    <% if @favorite %>
+      <p><%= button_to "Remover empresa dos favoritos", company_favorite_path(@company, @favorite), method: :delete %></p>
+    <% else %>
+      <p><%= button_to "Adicionar empresa aos favoritos", company_favorites_path(@company) %></p>
+    <% end %>
+  <% end %>
+  <p><%= link_to "Editar empresa", edit_company_path(@company) %></p>
+  <p><%= link_to "Voltar à lista de empresas", companies_path  %></p>
   <%= link_to company_path(@company),
-    data:{turbo_method: :delete, turbo_confirm:"Are you sure?"} do %>
+    data:{turbo_method: :delete, turbo_confirm:"Você tem certeza que deseja apagar?"} do %>
     <i class="fa-solid fa-trash"></i>
   <% end %>
 </div>

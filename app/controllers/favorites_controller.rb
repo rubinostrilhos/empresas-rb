@@ -3,26 +3,25 @@ class FavoritesController < ApplicationController
     @favorites = Favorite.where(user_id: current_user.id)
   end
 
-  # def create
-  #   @favorite = Favorite.new
-  #   @user = current_user
-  #   @company = Company.find(params[:company_id])
+  def create
+    @company = Company.find(params[:company_id])
+    @favorite = Favorite.new(user_id: current_user.id, company_id: params[:company_id])
+    if @favorite.save
+      redirect_to company_path(@company), notice: 'Companhia adicionada aos favoritos!'
+    else
+      redirect_to company_path(@company), alert: 'Ocorreu um erro!'
+    end
+  end
 
+  def destroy
+    @favorite = Favorite.find_by(user_id: current_user.id, company_id: params[:company_id])
+    @favorite.destroy
+    redirect_to favorites_path, notice: 'Companhia exluída dos favoritos'
+  end
 
-#     @favorite = Favorite.new(user_id: current_user.id, company_id: params[:company_id])
-#     if @favorite.save
-#       redirect_to companies_path, notice: 'Companhia adicionada aos favoritos!'
-#     else
-#       redirect_to companies_path, alert: 'Ocorreu um erro!'
-#     end
-  # end
+  private
 
-#   def destroy
-#     @favorite = current_user.favorites.find_by(company_id: params[:company_id])
-#     if @favorite.destroy
-#       redirect_to companies_path, notice: 'Company removed from favorites!'
-#     else
-#       redirect_to companies_path, alert: 'Failed to remove company from favorites!'
-#     end
-#   end
+  def favorite_params
+    params.require(:company).permit(:company_id)
+  end
 end
