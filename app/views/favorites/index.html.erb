@@ -1,0 +1,12 @@
+<% if user_signed_in? && @favorites %>
+  <div class="container text-center">
+    <h1>Suas empresas favoritas</h1>
+    <h5><%= "Total de empresas: #{@favorites.size}" %></h5>
+    <ul>
+      <% @favorites.each do |favorite| %>
+        <li><%= link_to favorite.company.name, company_path(favorite.company_id) %></li>
+      <% end %>
+    </ul>
+    <p><%= link_to "Voltar à lista de companhias", companies_path  %></p>
+  </div>
+<% end %>
