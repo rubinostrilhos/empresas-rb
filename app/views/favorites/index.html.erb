@@ -1,4 +1,4 @@
-<% if user_signed_in? && @favorites %>
+<% if user_signed_in? %>
   <div class="container text-center">
     <h1>Suas empresas favoritas</h1>
     <h5><%= "Total de empresas: #{@favorites.size}" %></h5>
@@ -7,6 +7,9 @@
         <li><%= link_to favorite.company.name, company_path(favorite.company_id) %></li>
       <% end %>
     </ul>
-    <p><%= link_to "Voltar à lista de companhias", companies_path  %></p>
+    <p><%= link_to "Voltar à lista de empresas", companies_path  %></p>
   </div>
+<% else %>
+  <h2>Você precisa estar logado para ver suas empresas favoritas</h2>
+  <%= link_to "Faça seu login", new_user_session_path %>
 <% end %>
