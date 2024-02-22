@@ -14,11 +14,11 @@
   <% if user_signed_in? %>
     <% if @favorite %>
       <p><%= button_to company_favorite_path(@company, @favorite), method: :delete, class: 'btn' do%></p>
-        <i class="fa-solid fa-star"></i>
+        <i class="fa-solid fa-star fa-2x" style="color: rgb(250, 200, 0);" title="Clique para remover dos favoritos"></i>
       <% end %>
     <% else %>
       <p><%= button_to company_favorites_path(@company), class: 'btn' do %></p>
-        <i class="fa-regular fa-star"></i>
+        <i class="fa-regular fa-star fa-2x" title="Clique para adicionar aos favoritos"></i>
       <% end %>
     <% end %>
   <% end %>
