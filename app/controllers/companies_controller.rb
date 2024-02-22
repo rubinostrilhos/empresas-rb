@@ -6,6 +6,7 @@ class CompaniesController < ApplicationController
   end
 
   def show
+    @favorite = Favorite.find_by(user_id: current_user.id, company_id: @company.id)
   end
 
   def new
