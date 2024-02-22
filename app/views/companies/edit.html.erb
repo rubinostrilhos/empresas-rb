@@ -1,5 +1,10 @@
-<div class="container">
-  <h1>Editar <%= @company.name %></h1>
-  <%= render 'form', company: @company %>
-  <p><%= link_to "Back to company", @company  %></p>
-</div>
+<% if current_user.is_admin? %>
+  <div class="container">
+    <h1>Editar <%= @company.name %></h1>
+    <%= render 'form', company: @company %>
+    <p><%= link_to "Back to company", @company  %></p>
+  </div>
+<% else %>
+  <h1>Você não tem permissão para editar empresas</h1>
+  <p><%= link_to "Voltar para a empresa", company_path(@company) %></p>
+<% end %>

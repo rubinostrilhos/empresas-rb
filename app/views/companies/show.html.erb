@@ -18,10 +18,12 @@
       <p><%= button_to "Adicionar empresa aos favoritos", company_favorites_path(@company) %></p>
     <% end %>
   <% end %>
-  <p><%= link_to "Editar empresa", edit_company_path(@company) %></p>
   <p><%= link_to "Voltar à lista de empresas", companies_path  %></p>
-  <%= link_to company_path(@company),
-    data:{turbo_method: :delete, turbo_confirm:"Você tem certeza que deseja apagar?"} do %>
-    <i class="fa-solid fa-trash"></i>
+  <% if current_user.is_admin? %>
+    <p><%= link_to "Editar empresa", edit_company_path(@company) %></p>
+    <%= link_to company_path(@company),
+      data:{turbo_method: :delete, turbo_confirm:"Você tem certeza que deseja apagar?"} do %>
+      <i class="fa-solid fa-trash"></i>
+    <% end %>
   <% end %>
 </div>
