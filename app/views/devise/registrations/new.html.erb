@@ -8,6 +8,21 @@
                 required: true,
                 autofocus: true,
                 input_html: { autocomplete: "email" }%>
+    <%= f.input :celular,
+                required: false,
+                autofocus: true,
+                input_html: { autocomplete: "celular" }%>
+    <%= f.input :stack,
+                required: false,
+                hint: "Back-end, Front-end, Full Stack...",
+                autofocus: true,
+                input_html: { autocomplete: "stack" }%>
+    <%= f.input :employed, as: :boolean,
+                input_html: { autocomplete: "Empregado?" }  %>
+     <%= f.input :linkedin,
+                required: false,
+                autofocus: true,
+                input_html: { autocomplete: "LinkedIn" }%>
     <%= f.input :password,
                 required: true,
                 hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
