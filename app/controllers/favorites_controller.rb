@@ -1,10 +1,11 @@
 class FavoritesController < ApplicationController
+  before_action :set_company, only: [:create, :destroy]
+
   def index
     @favorites = Favorite.where(user_id: current_user.id)
   end
 
   def create
-    @company = Company.find(params[:company_id])
     @favorite = Favorite.new(user_id: current_user.id, company_id: params[:company_id])
     if @favorite.save
       redirect_to company_path(@company), notice: 'Companhia adicionada aos favoritos!'
@@ -16,10 +17,14 @@ class FavoritesController < ApplicationController
   def destroy
     @favorite = Favorite.find_by(user_id: current_user.id, company_id: params[:company_id])
     @favorite.destroy
-    redirect_to favorites_path, notice: 'Companhia exluída dos favoritos'
+    redirect_to company_path(@company), notice: 'Companhia exluída dos favoritos'
   end
 
   private
+
+  def set_company
+    @company = Company.find(params[:company_id])
+  end
 
   def favorite_params
     params.require(:company).permit(:company_id)
