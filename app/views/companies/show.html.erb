@@ -13,15 +13,19 @@
   </ul>
   <% if user_signed_in? %>
     <% if @favorite %>
-      <p><%= button_to "Remover empresa dos favoritos", company_favorite_path(@company, @favorite), method: :delete %></p>
+      <p><%= button_to company_favorite_path(@company, @favorite), method: :delete, class: 'btn' do%></p>
+        <i class="fa-solid fa-star fa-2x" style="color: rgb(250, 200, 0);" title="Clique para remover dos favoritos"></i>
+      <% end %>
     <% else %>
-      <p><%= button_to "Adicionar empresa aos favoritos", company_favorites_path(@company) %></p>
+      <p><%= button_to company_favorites_path(@company), class: 'btn' do %></p>
+        <i class="fa-regular fa-star fa-2x" title="Clique para adicionar aos favoritos"></i>
+      <% end %>
     <% end %>
   <% end %>
   <p><%= link_to "Editar empresa", edit_company_path(@company) %></p>
   <p><%= link_to "Voltar à lista de empresas", companies_path  %></p>
   <%= link_to company_path(@company),
-    data:{turbo_method: :delete, turbo_confirm:"Você tem certeza que deseja apagar?"} do %>
+  data:{turbo_method: :delete, turbo_confirm:"Você tem certeza que deseja apagar?"} do %>
     <i class="fa-solid fa-trash"></i>
   <% end %>
 </div>
