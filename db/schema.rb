@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_02_22_141003) do
+ActiveRecord::Schema[7.1].define(version: 2024_02_22_185015) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -23,10 +23,10 @@ ActiveRecord::Schema[7.1].define(version: 2024_02_22_141003) do
     t.string "segment"
     t.string "size"
     t.boolean "job_offer", default: false
-    t.boolean "ruby_stack", default: false
+    t.boolean "ruby_stack", default: true
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "status", default: "Inativo"
+    t.string "status"
     t.string "site"
     t.string "category"
     t.string "uf"
@@ -50,6 +50,10 @@ ActiveRecord::Schema[7.1].define(version: 2024_02_22_141003) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.boolean "is_admin", default: false
+    t.string "celular"
+    t.string "stack"
+    t.boolean "employed"
+    t.string "linkedin"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end

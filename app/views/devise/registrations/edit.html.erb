@@ -21,6 +21,21 @@
                 hint: "we need your current password to confirm your changes",
                 required: true,
                 input_html: { autocomplete: "current-password" } %>
+    <%= f.input :celular,
+                hint: "leave it blank if you don't want to change it",
+                required: false,
+                input_html: { autocomplete: "celular" }%>
+    <%= f.input :stack,
+                hint: "leave it blank if you don't want to change it",
+                required: false,
+                input_html: { autocomplete: "stack" }%>
+    <%= f.input :employed, as: :boolean,
+                hint: "leave it blank if you don't want to change it",
+                input_html: { autocomplete: "Empregado?" }  %>
+    <%= f.input :linkedin,
+                hint: "leave it blank if you don't want to change it",
+                required: false,
+                input_html: { autocomplete: "Linkedin" }%>
   </div>
 
   <div class="form-actions">
