@@ -23,10 +23,10 @@ ActiveRecord::Schema[7.1].define(version: 2024_02_22_185015) do
     t.string "segment"
     t.string "size"
     t.boolean "job_offer", default: false
-    t.boolean "ruby_stack", default: true
+    t.boolean "ruby_stack", default: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "status"
+    t.string "status", default: "Inativo"
     t.string "site"
     t.string "category"
     t.string "uf"
