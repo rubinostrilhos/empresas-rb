@@ -2,7 +2,7 @@ class CompaniesController < ApplicationController
   before_action :find_company, only: %i[show edit update destroy]
 
   def index
-    @companies = Company.all
+    @companies = Company.where(status: 'ativo', approval_status: true)
   end
 
   def show
@@ -15,6 +15,7 @@ class CompaniesController < ApplicationController
 
   def create
     @company = Company.new(company_params)
+    @company.update_attribute(:approval_status, false)
 
     if @company.save
       redirect_to @company
