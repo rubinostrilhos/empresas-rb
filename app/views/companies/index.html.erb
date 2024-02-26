@@ -1,5 +1,14 @@
 <div class="container text-center">
   <h1>Empresas Ruby</h1>
+  <%= form_with url: companies_path, method: :get, class: "d-flex mb-4 mt-4" do %>
+    <%= text_field_tag :query,
+          params[:query],
+          class: "form-control",
+          placeholder: "Find a company"
+    %>
+    <%= submit_tag "Search", name: "", class: "btn btn-primary" %>
+  <% end %>
+
   <h5><%= "Total de empresas: #{@companies.size}" %></h5>
   <%= link_to new_company_path do %>
     <i class="fa-solid fa-plus mb-4"></i> Adicionar nova empresa

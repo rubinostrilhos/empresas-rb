@@ -2,7 +2,11 @@ class CompaniesController < ApplicationController
   before_action :find_company, only: %i[show edit update destroy]
 
   def index
-    @companies = Company.all
+    if params[:query] && params[:query] != ""
+      @companies = Company.search_by_name_and_email(params[:query])
+    else
+      @companies = Company.all
+    end
   end
 
   def show
