@@ -8,4 +8,11 @@ class Company < ApplicationRecord
   # validações para definir status de aprovação do cadastro da empresa por adm.
   validates :status, inclusion: { in: %w[ativo inativo pendente] }
   validates :approval_status, inclusion: { in: [true, false] }
+
+  include PgSearch::Model
+  pg_search_scope :search_by_name_and_email,
+    against: [ :name, :email ],
+    using: {
+      tsearch: { prefix: true }
+    }
 end

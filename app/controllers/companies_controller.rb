@@ -2,7 +2,11 @@ class CompaniesController < ApplicationController
   before_action :find_company, only: %i[show edit update destroy]
 
   def index
-    @companies = Company.where(status: 'ativo', approval_status: true)
+    if params[:query] && params[:query] != ""
+      @companies = Company.search_by_name_and_email(params[:query])
+    else
+      @companies = Company.where(status: 'ativo', approval_status: true)
+    end
   end
 
   def show
