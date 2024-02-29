@@ -9,7 +9,7 @@ namespace :import do
       companies_attributes = {
         name: row['Nome'].presence || "'FALTA #{:name}'",
         site: row['Site'].presence || "'FALTA #{:site}'",
-        email: row['Contato'].presence || "'FALTA #{:email}'",
+        email: row['Contato'].presence || "faltaoemail@email.com",
         phone: row['Telefone'].presence || "'FALTA #{:phone}'",
         category: row['Categoria'].presence || "'FALTA #{:category}'",
         segment: row['Setor'].presence || "'FALTA #{:segment}'",
