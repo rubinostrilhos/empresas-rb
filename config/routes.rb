@@ -1,16 +1,18 @@
 Rails.application.routes.draw do
+  # rota para index das empresas sem aprovação
+  get 'companies/pending_approval', to: 'companies#pending_approval', as: 'pending_approval_companies'
   resources :companies do
     resources :favorites, only: %i[create destroy]
   end
+
+
+  # rota para aprovação da empresa pelo admin
+  patch 'companies/:id/approve', to: 'companies#approve', as: 'approve_company'
+
+  # rota para rejeitar aprovação da empresa pelo admin
+  delete 'companies/:id/reject', to: 'companies#reject', as: 'reject_company'
+
   devise_for :users
   root to: "pages#home"
   get 'favorites', to: 'favorites#index'
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
-
-  # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.
-  # Can be used by load balancers and uptime monitors to verify that the app is live.
-  get "up" => "rails/health#show", as: :rails_health_check
-
-  # Defines the root path route ("/")
-  # root "posts#index"
 end

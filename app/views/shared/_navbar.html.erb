@@ -17,6 +17,12 @@
           <li class="nav-item">
             <%= link_to "Empresas", "/companies", class: "nav-link" %>
           </li>
+          <%# Menu de admin na navbar %>
+          <% if current_user.is_admin?  %>
+            <li class="nav-item active">
+              <%= link_to "Admin", "/companies/pending_approval", class: "nav-link" %>
+            </li>
+          <% end %>
           <li class="nav-item dropdown">
           <a href="#" class="avatar" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             <%= image_tag "Portrait_Placeholder.png", class: "avatar", alt: "dropdown menu" %>
