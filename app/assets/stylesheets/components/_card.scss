@@ -1,0 +1,101 @@
+.card {
+  width: 325.3px;
+  height: 338.19px;
+}
+
+.lower-part-card {
+  position: relative;
+  padding: 18px 20px 34px 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.one {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.two {
+  display: flex;
+  flex-direction: column;
+}
+
+.score {
+  display: flex;
+  align-self: baseline;
+  margin-bottom: 16px;
+}
+
+.overlay-card {
+  background-color: $black;
+  width: 325.3px;
+  height: 189.96px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 30%;
+}
+
+.photo-card {
+  width: 325.3px;
+  height: 189.96px;
+  object-fit: cover;
+}
+
+.logo-card {
+  width: 34.81px;
+  height: 31.74px;
+  position: absolute;
+  top: 47.57px;
+  left: 27.43px;
+}
+
+.title-photo-card {
+  font-size: 21.47px;
+  font-weight: bold;
+  color: $white;
+  position: absolute;
+  top: 13.42px;
+  left: 27.43px;
+}
+
+
+.title-text-card {
+  font-size: 20.94px;
+  color: $black;
+  font-weight: bold;
+}
+
+.button-card {
+  width: 93.76px;
+  height: 29.35px;
+  background-color: $falu-red;
+  border-radius: 6px;
+  border: none;
+  font-size: 10.2px;
+  color: $white;
+  font-weight: bold;
+}
+
+.button-card:active {
+  background-color: $dark-chocolate;
+}
+
+.star-card {
+  width: 14.57px;
+  height: 13.85px;
+  margin-right: 6px;
+}
+
+.rate-card {
+  font-size: 12.35px;
+  color: $black;
+}
+
+.summary-card {
+  font-size: 12.35px;
+  line-height: 121.5%;
+  text-align: left;
+  font-weight: 400;
+}
