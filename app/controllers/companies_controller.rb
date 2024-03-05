@@ -1,11 +1,15 @@
 class CompaniesController < ApplicationController
-  before_action :find_company, only: %i[show edit update destroy]
+  before_action :find_company, only: %i[show edit update destroy approve reject]
 
   def index
-    if params[:query] && params[:query] != ""
+    if params[:query].present?
       @companies = Company.search_by_name_and_email(params[:query])
+                          .where(approval_status: true)
+                          .where(status: ['Ativo', 'Pendente'])
+                          .order(:status)
     else
-      @companies = Company.all
+      @companies = Company.where(approval_status: true, status: ['Ativo', 'Pendente'])
+                          .order(:status)
     end
   end
 
@@ -19,6 +23,7 @@ class CompaniesController < ApplicationController
 
   def create
     @company = Company.new(company_params)
+    current_user.is_admin? ? @company.update_attribute(:approval_status, true) : @company.update_attribute(:approval_status, false)
 
     if @company.save
       redirect_to @company
@@ -38,6 +43,21 @@ class CompaniesController < ApplicationController
   def destroy
     @company.destroy
     redirect_to companies_path, status: :see_other
+  end
+
+  # metodos para aprovação da empresa por um admin
+  def pending_approval
+    @pending_companies = Company.where(approval_status: false)
+  end
+
+  def approve
+    @company.update!(approval_status: true)
+    redirect_to pending_approval_companies_path, notice: 'Empresa aprovada com sucesso.'
+  end
+
+  def reject
+    @company.destroy
+    redirect_to pending_approval_companies_path, notice: 'Empresa rejeitada com sucesso.'
   end
 
   private

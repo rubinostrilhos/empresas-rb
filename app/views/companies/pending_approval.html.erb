@@ -1,0 +1,11 @@
+<h1>Empresas Pendentes de Aprovação</h1>
+
+<ul>
+  <% @pending_companies.each do |company| %>
+    <li>
+      <%= company.name %> - <%= company.email %> (<%= company.segment %>)
+      <%= link_to "Aprovar", approve_company_path(company), data:{turbo_method: :patch, turbo_confirm:"Você tem certeza que deseja aprovar?"} %>
+      <%= link_to "Rejeitar", reject_company_path(company), data:{turbo_method: :delete, turbo_confirm:"Você tem certeza que deseja rejeitar?"} %>
+    </li>
+  <% end %>
+</ul>
