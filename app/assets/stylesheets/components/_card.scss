@@ -1,101 +1,110 @@
 .card {
   width: 325.3px;
   height: 338.19px;
-}
 
-.lower-part-card {
-  position: relative;
-  padding: 18px 20px 34px 20px;
-  display: flex;
-  flex-direction: column;
-}
+  &__upper-part {
+    position: relative;
 
-.one {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
+    &__photo {
+      position: relative;
+      width: 325.3px;
+      height: 189.96px;
 
-.two {
-  display: flex;
-  flex-direction: column;
-}
+      &__overlay {
+        background-color: $black;
+        width: 325.3px;
+        height: 189.96px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        opacity: 0.3;
+      }
 
-.score {
-  display: flex;
-  align-self: baseline;
-  margin-bottom: 16px;
-}
+      &__photo-image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
 
-.overlay-card {
-  background-color: $black;
-  width: 325.3px;
-  height: 189.96px;
-  position: absolute;
-  top: 0;
-  left: 0;
-  opacity: 30%;
-}
+      &__logo {
+        width: 34.81px;
+        height: 31.74px;
+        position: absolute;
+        top: 47.57px;
+        left: 27.43px;
+      }
 
-.photo-card {
-  width: 325.3px;
-  height: 189.96px;
-  object-fit: cover;
-}
+      &__title {
+        font-size: 21.47px;
+        font-weight: bold;
+        color: $white;
+        position: absolute;
+        top: 13.42px;
+        left: 27.43px;
+      }
+    }
+  }
 
-.logo-card {
-  width: 34.81px;
-  height: 31.74px;
-  position: absolute;
-  top: 47.57px;
-  left: 27.43px;
-}
+  &__lower-part {
+    position: relative;
+    padding: 18px 20px 34px 20px;
+    display: flex;
+    flex-direction: column;
 
-.title-photo-card {
-  font-size: 21.47px;
-  font-weight: bold;
-  color: $white;
-  position: absolute;
-  top: 13.42px;
-  left: 27.43px;
-}
+    &__content-one {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
 
+      &__title-text {
+        font-size: 20.94px;
+        color: $black;
+        font-weight: bold;
+      }
 
-.title-text-card {
-  font-size: 20.94px;
-  color: $black;
-  font-weight: bold;
-}
+      &__button {
+        width: 93.76px;
+        height: 29.35px;
+        background-color: $falu-red;
+        border-radius: 6px;
+        border: none;
+        font-size: 10.2px;
+        color: $white;
+        font-weight: bold;
 
-.button-card {
-  width: 93.76px;
-  height: 29.35px;
-  background-color: $falu-red;
-  border-radius: 6px;
-  border: none;
-  font-size: 10.2px;
-  color: $white;
-  font-weight: bold;
-}
+        &:active {
+          background-color: $dark-chocolate;
+        }
+      }
+    }
 
-.button-card:active {
-  background-color: $dark-chocolate;
-}
+    &__content-two {
+      display: flex;
+      flex-direction: column;
 
-.star-card {
-  width: 14.57px;
-  height: 13.85px;
-  margin-right: 6px;
-}
+      &__score {
+        display: flex;
+        align-self: baseline;
+        margin-bottom: 16px;
 
-.rate-card {
-  font-size: 12.35px;
-  color: $black;
-}
+        &__star {
+          width: 14.57px;
+          height: 13.85px;
+          margin-right: 6px;
+        }
 
-.summary-card {
-  font-size: 12.35px;
-  line-height: 121.5%;
-  text-align: left;
-  font-weight: 400;
+        &__rate {
+          font-size: 12.35px;
+          color: $black;
+        }
+      }
+
+      &__summary {
+        font-size: 12.35px;
+        line-height: 121.5%;
+        text-align: left;
+        font-weight: 400;
+      }
+    }
+  }
 }

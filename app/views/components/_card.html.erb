@@ -1,26 +1,25 @@
- <div class="card">
-    <div class="upper-part-card">
-      <div class="overlay-card"></div>
-      <div class="photo-card">
-        <%= image_tag "photo-card.png", class: "photo-card" %>
-        <%= image_tag "icons/ruby-corp.svg", class: "logo-card" %>
-        <div class="title-photo-card">Ruby Corp</div>
+<div class="card">
+  <div class="card__upper-part">
+    <div class="card__upper-part__photo">
+      <div class="card__upper-part__photo__overlay"></div>
+      <div class="card__upper-part__photo__title">Ruby Corp</div>
+      <%= image_tag "photo-card.png", class: "card__upper-part__photo__photo-image" %>
+      <%= image_tag "icons/ruby-corp.svg", class: "card__upper-part__photo__logo" %>
+    </div>
+  </div>
+  <div class="card__lower-part">
+    <div class="card__lower-part__content-one">
+      <div class="card__lower-part__content-one__title-text">Ruby Corp</div>
+      <button class="card__lower-part__content-one__button" type="submit">Saiba mais</button>
+    </div>
+    <div class="card__lower-part__content-two">
+      <div class="card__lower-part__content-two__score">
+        <%= image_tag "icons/star", class: "card__lower-part__content-two__score__star" %>
+        <div class="card__lower-part__content-two__score__rate">3.4</div>
+      </div>
+      <div class="card__lower-part__content-two__summary">
+        Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna.
       </div>
     </div>
-      <div class="lower-part-card">
-        <div class="one">
-          <div class="title-text-card">Ruby Corp</div>
-          <button class="button-card" type="submit">Saiba mais</button>
-        </div>
-        <div class="two">
-          <div class="score">
-            <%= image_tag "icons/star", class: "star-card" %>
-            <div class="rate-card">3.4</div>
-          </div>
-          <div class="summary-card">
-            Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna.
-          </div>
-        </div>
-      </div>
   </div>
 </div>
