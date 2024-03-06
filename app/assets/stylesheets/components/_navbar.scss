@@ -1,6 +1,8 @@
 .navbar-lewagon {
   justify-content: space-between;
-  background: rgb(44, 42, 42);
+  background: $falu-red;
+  height: 143.46px;
+  padding: 0 180px;
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -8,5 +10,33 @@
 }
 
 .navbar-lewagon .navbar-brand img {
-  width: 50px;
+  width: 107.79px;
+  height: 80.04px;
+}
+
+.nav-link {
+  color: $white;
+  font-size: 21.34px;
+  --bs-navbar-nav-link-padding-x: 0;
+  margin-right: 20px;
+}
+
+.navbar-expand-sm .navbar-nav .dropdown-menu::before {
+  content: "";
+  position: absolute;
+  top: 32px;
+  left: -17px;
+  width: 0;
+  height: 0;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+  border-right: 20px solid $white;
+}
+
+
+.navbar-expand-sm .navbar-nav .dropdown-menu {
+  position: absolute;
+  top: -26px;
+  right: -180px;
+  font-size: 10px;
 }
