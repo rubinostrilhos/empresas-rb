@@ -23,8 +23,10 @@
     <% end %>
   <% end %>
   <p><%= link_to "Voltar à lista de empresas", companies_path  %></p>
-  <% if current_user.is_admin? %>
+  <% if current_user.is_admin? || (current_user.id == @company.user_id && @company.approval_status == false) %>
     <p><%= link_to "Editar empresa", edit_company_path(@company) %></p>
+  <% end %>
+  <% if current_user.is_admin? %>
     <%= link_to company_path(@company),
     data:{turbo_method: :delete, turbo_confirm:"Você tem certeza que deseja apagar?"} do %>
       <i class="fa-solid fa-trash"></i>
