@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_02_26_190740) do
+ActiveRecord::Schema[7.1].define(version: 2024_03_05_150556) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -31,6 +31,8 @@ ActiveRecord::Schema[7.1].define(version: 2024_02_26_190740) do
     t.string "category"
     t.string "uf"
     t.boolean "approval_status"
+    t.bigint "user_id"
+    t.index ["user_id"], name: "index_companies_on_user_id"
   end
 
   create_table "favorites", force: :cascade do |t|
@@ -59,6 +61,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_02_26_190740) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "companies", "users"
   add_foreign_key "favorites", "companies"
   add_foreign_key "favorites", "users"
 end
