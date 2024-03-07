@@ -2,6 +2,8 @@ class CompaniesController < ApplicationController
   before_action :find_company, only: %i[show edit update destroy approve reject]
 
   def index
+    @page_name = 'Empresas'
+
     if params[:query].present?
       @companies = Company.search_by_name_and_email(params[:query])
                           .where(approval_status: true)

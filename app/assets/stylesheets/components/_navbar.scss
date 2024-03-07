@@ -18,13 +18,14 @@
   color: $white;
   font-size: 21.34px;
   --bs-navbar-nav-link-padding-x: 0;
-  margin-right: 20px;
+  margin-right: 30px;
+  font-weight: 500;
 }
 
 .navbar-expand-sm .navbar-nav .dropdown-menu::before {
   content: "";
   position: absolute;
-  top: 32px;
+  top: 35px;
   left: -17px;
   width: 0;
   height: 0;
@@ -33,10 +34,23 @@
   border-right: 20px solid $white;
 }
 
-
 .navbar-expand-sm .navbar-nav .dropdown-menu {
   position: absolute;
   top: -26px;
   right: -180px;
-  font-size: 10px;
+  font-size: 14px;
+  width: 160px;
+}
+
+.avatar {
+  width: 44.11px;
+  height: 44.35px;
+}
+
+.dropdown-item {
+  line-height: 1.2;
+}
+
+.highlighted {
+  font-weight: 800;
 }

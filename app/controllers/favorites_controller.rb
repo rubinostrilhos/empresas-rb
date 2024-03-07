@@ -2,6 +2,7 @@ class FavoritesController < ApplicationController
   before_action :set_company, only: [:create, :destroy]
 
   def index
+    @page_name = 'Home'
     @favorites = Favorite.where(user_id: current_user.id)
   end
 
