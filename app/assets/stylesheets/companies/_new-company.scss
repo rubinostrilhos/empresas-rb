@@ -1,0 +1,24 @@
+.company-form .new_company {
+    display: flex;
+    flex-direction: column;
+}
+
+.company-form .form-control {
+    --bs-body-bg: #f2f2f2;
+    border: none;
+    border-radius: 8px;
+    width: 296.68px;
+}
+
+.company-form .form-control:focus {
+    border-color: transparent;
+    outline: 0;
+    box-shadow: none;
+}
+
+.company-form .string,
+.company-form .email,
+.company-form .tel,
+.company-form .form-inputs {
+    display: flex;
+}
