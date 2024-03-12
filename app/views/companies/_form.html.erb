@@ -1,47 +1,53 @@
-<%= simple_form_for(@company) do |f| %>
+<div class="company-form">
+  <%= simple_form_for(@company) do |f| %>
 
-  <div class="form-inputs">
-    <%= f.input :name %>
-  </div>
+    <div class="form-inputs">
+      <%= f.input :name %>
+    </div>
 
-  <div class="form-inputs">
-    <%= f.input :site %>
-  </div>
+    <div class="form-inputs">
+      <%= f.input :site %>
+    </div>
 
-  <div class="form-inputs">
-    <%= f.input :email %>
-  </div>
+    <div class="form-inputs">
+      <%= f.input :email %>
+    </div>
 
-  <div class="form-inputs">
-    <%= f.input :phone %>
-  </div>
+    <div class="form-inputs">
+      <%= f.input :phone, label:"Telefone" %>
+    </div>
 
-  <div class="form-inputs">
-    <%= f.input :category %>
-  </div>
+    <div class="form-inputs">
+      <%= f.input :category %>
+    </div>
 
-  <div class="form-inputs">
-    <%= f.input :segment %>
-  </div>
+    <div class="form-inputs">
+      <%= f.input :segment %>
+    </div>
 
-  <div class="form-inputs">
-    <%= f.input :uf %>
-  </div>
+    <div class="form-inputs">
+      <%= f.input :uf %>
+    </div>
 
-  <div class="form-inputs">
-    <%= f.label :status %>
-    <%= f.select :status, options_for_select([['Inativo', 'Inativo'], ['Ativo', 'Ativo'], ['Pendente', 'Pendente']], f.object.status), {}, { class: 'form-control' } %>
-  </div>
+    <div class="form-inputs .group-input">
+      <%= f.label :status %>
+      <%= f.select :status, options_for_select([['Inativo', 'Inativo'], ['Ativo', 'Ativo'], ['Pendente', 'Pendente']], f.object.status), {}, { class: 'form-control' } %>
+    </div>
 
-  <div class="form-inputs">
-    <%= f.input :job_offer %>
-  </div>
+    <div class="form-inputs">
+      <%= f.input :job_offer %>
+    </div>
 
-  <div class="form-inputs">
-    <%= f.input :ruby_stack %>
-  </div>
+    <div class="form-inputs">
+      <%= f.input :ruby_stack %>
+    </div>
 
-  <div class="form-actions btn btn-success">
-    <%= f.button :submit %>
-  </div>
-<% end %>
+    <div>
+      <input type="color" name="" id="">
+    </div>
+
+    <div class="form-actions btn btn-success">
+      <%= f.button :submit %>
+    </div>
+  <% end %>
+</div>
