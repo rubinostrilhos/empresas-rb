@@ -6,6 +6,11 @@
           class: "form-control",
           placeholder: "Find a company"
     %>
+    <%# Filtros da busca index de companies %>
+    <%= select_tag :uf, options_for_select(Company.distinct.pluck(:uf).compact.sort, params[:uf]), include_blank: "UF", class: "form-control" %>
+    <%= select_tag :segment, options_for_select(Company.distinct.pluck(:segment).compact.sort, params[:segment]), include_blank: "Segmento", class: "form-control" %>
+    <%= select_tag :category, options_for_select(Company.distinct.pluck(:category).compact.sort, params[:category]), include_blank: "Categoria", class: "form-control" %>
+     <%= link_to "Limpar", companies_path, class: "btn btn-secondary" %>
     <%= submit_tag "Search", name: "", class: "btn btn-primary" %>
   <% end %>
 
@@ -13,10 +18,11 @@
   <%= link_to new_company_path do %>
     <i class="fa-solid fa-plus mb-4"></i> Adicionar nova empresa
   <% end %>
+
+
   <ul>
     <% @companies.each do |company| %>
       <li><%= link_to company.name, company_path(company.id) %></li>
     <% end %>
   </ul>
 </div>
-

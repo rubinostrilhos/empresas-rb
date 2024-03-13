@@ -3,16 +3,7 @@ class CompaniesController < ApplicationController
 
   def index
     @page_name = 'Empresas'
-
-    if params[:query].present?
-      @companies = Company.search_by_name_and_email(params[:query])
-                          .where(approval_status: true)
-                          .where(status: ['Ativo', 'Pendente'])
-                          .order(:status)
-    else
-      @companies = Company.where(approval_status: true, status: ['Ativo', 'Pendente'])
-                          .order(:status)
-    end
+    @companies = filtered_companies
   end
 
   def show
@@ -83,6 +74,32 @@ class CompaniesController < ApplicationController
   end
 
   private
+
+  def filtered_companies
+    companies = Company.where(approval_status: true, status: ['Ativo', 'Pendente'])
+
+    if params[:query].present?
+      companies = companies.search_by_name_and_email(params[:query])
+    end
+
+    if params[:uf].present?
+      companies = companies.where(uf: params[:uf])
+    end
+
+    if params[:segment].present?
+      companies = companies.where(segment: params[:segment])
+    end
+
+    if params[:category].present?
+      companies = companies.where(category: params[:category])
+    end
+
+    unless current_user.is_admin?
+      companies = companies.where(approval_status: true)
+    end
+
+    companies.order(:status)
+  end
 
   def find_company
     @company = Company.find(params[:id])
