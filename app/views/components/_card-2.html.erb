@@ -1,14 +1,16 @@
-<a href="#" class="box box--hover">
-  <div class="box__bg-color"></div>
+<div href="#" class="box">
+    <div class="bg_color" style="background-color: <%= company.color.nil? ? '#000' : company.color %>;"></div>
 
-  <div class="upper-card">
-    <p class="box__title">
-      Ruby Corp
+    <div class="upper-card">
+      <p class="box-title text-selector">
+        <%=company.name%>
+      </p>
+      <button class="box-button text-selector">
+        <%= link_to 'Saiba mais', company_path(company) %>
+      </button>
+    </div>
+
+    <p class="box-description">
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque sint neque animi veritatis voluptas in reprehenderit et, doloribus laboriosam quis adipisci libero, fugiat ipsa. Error et omnis quam.
     </p>
-    <button class="box__button">Saiba mais</button>
-  </div>
-
-  <p class="box__description">
-    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque sint neque animi veritatis voluptas in reprehenderit et, doloribus laboriosam quis adipisci libero, fugiat ipsa. Error et omnis quam.
-  </p>
-</a>
+</div>

@@ -1,22 +1,28 @@
 <div class="container text-center">
-  <h1>Empresas Ruby</h1>
-  <%= form_with url: companies_path, method: :get, class: "d-flex mb-4 mt-4" do %>
-    <%= text_field_tag :query,
-          params[:query],
-          class: "form-control",
-          placeholder: "Find a company"
-    %>
-    <%= submit_tag "Search", name: "", class: "btn btn-primary" %>
-  <% end %>
+  <div class="companies-upper">
+    <div class="companies-number">
+      <h1>EMPRESAS</h1>
+      <h5 class="companies-total"><%= "Total de empresas: #{@companies.size}" %></h5>
+    </div>
+    <div class="companies-search">
+      <%= form_with url: companies_path, method: :get, class: "d-flex mb-4 mt-4" do %>
+        <%= text_field_tag :query,
+              params[:query],
+              class: "form-control  company-search",
+              placeholder: "Encontre uma empresa"
+        %>
+        <%= submit_tag "Busca", name: "", class: "btn btn-primary company-search-button" %>
+      <% end %>
 
-  <h5><%= "Total de empresas: #{@companies.size}" %></h5>
-  <%= link_to new_company_path do %>
-    <i class="fa-solid fa-plus mb-4"></i> Adicionar nova empresa
-  <% end %>
-  <ul>
+      <%= link_to new_company_path do %>
+        <span class="fa-solid">+</span> Adicionar nova empresa
+      <% end %>
+    </div>
+  </div>
+  <ul class="grid-cards">
     <% @companies.each do |company| %>
-      <li><%= link_to company.name, company_path(company.id) %></li>
+      <%# <li><%= link_to company.name, company_path(company.id) </li>%>
+      <%= render "components/card-2", company: company %>
     <% end %>
   </ul>
 </div>
-
