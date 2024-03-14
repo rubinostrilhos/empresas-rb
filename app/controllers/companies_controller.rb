@@ -20,7 +20,7 @@ class CompaniesController < ApplicationController
     current_user.is_admin? ? @company.update_attribute(:approval_status, true) : @company.update_attribute(:approval_status, false)
 
     if @company.save
-      redirect_to @company
+      redirect_to @company, notice: 'Companhia criada com sucesso, um administrador avaliará os dados antes da publicação.'
     else
       render :new, status: :unprocessable_entity
     end
