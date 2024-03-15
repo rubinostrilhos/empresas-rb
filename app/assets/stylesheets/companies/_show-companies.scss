@@ -15,25 +15,28 @@ h1 {
 
 .companies-total {
   color: $falu-red;
+  font-weight: 700;
 }
 
 .companies-upper {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  max-width: 1273px;
-  margin-left: 7px;
+  justify-content: center;
+  margin: 0 auto;
+  gap: 0 1096px;
 }
+
 .companies-search {
   display: flex;
   flex-direction: column;
-  margin-top: -7px;
+  margin-top: -30px;
   align-items: end;
 }
 
 .company-search {
   background-color: $white;
   border-radius: 6px;
+  margin-bottom: 8px;
 }
 
 .company-search::placeholder {
@@ -43,11 +46,22 @@ h1 {
 }
 
 .company-search-button {
+  height: 38px;
   background-color: $falu-red;
   border-radius: 0px 6px 6px 0px;
   border: none;
   font-weight: bold;
   font-size: 12px;
+}
+
+.company-search-button:hover {
+  background-color: #6b101a;
+}
+
+.company-search-button:active {
+  --bs-btn-active-color: #fff;
+  --bs-btn-active-bg:  #9a1928;
+  --bs-btn-active-border-color: none;
 }
 
 .fa-solid {
@@ -69,7 +83,64 @@ a {
   display: flex;
   flex-wrap: wrap;
   gap: 0 40px;
-  justify-content: center;
-  width: 100%;
+  width: 100;
   padding: 0;
+  margin: 0 auto;
+  justify-content: center;
+}
+
+.container {
+  max-width: 100%;
+}
+
+
+// Media Querias
+
+
+@media (max-width: 1743px) {
+
+  .companies-upper {
+    gap: 0 663px;
+  }
+
+}
+
+@media (max-width: 1303px) {
+
+  .companies-upper {
+    gap: 0 223px;
+  }
+
+}
+
+@media (max-width: 863px) {
+
+  .companies-upper {
+    flex-direction: column;
+  }
+
+  .companies-total {
+    width: 214px;
+  }
+
+  .companies-number {
+    height: 277px;
+    gap: 10px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 23px 0;
+    align-items: center;
+    margin-bottom: -68px;
+  }
+
+  .companies-search {
+    display: flex;
+    flex-direction: column;
+    margin-top: -30px;
+    align-items: end;
+    margin-bottom: 87px;
+  }
+
+
 }
