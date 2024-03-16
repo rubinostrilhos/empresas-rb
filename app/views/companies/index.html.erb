@@ -6,17 +6,25 @@
     </div>
     <div class="companies-search">
       <%= form_with url: companies_path, method: :get, class: "d-flex mb-4 mt-4" do %>
-        <%= text_field_tag :query,
-              params[:query],
-              class: "form-control  company-search",
-              placeholder: "Encontre uma empresa"
-        %>
+
+
+
         <%# Filtros da busca index de companies %>
-            <%= select_tag :uf, options_for_select(Company.distinct.where(approval_status: true).pluck(:uf).compact.sort, params[:uf]), include_blank: "UF", class: "form-control" %>
-            <%= select_tag :segment, options_for_select(Company.distinct.where(approval_status: true).pluck(:segment).compact.sort, params[:segment]), include_blank: "Segmento", class: "form-control" %>
-            <%= select_tag :category, options_for_select(Company.distinct.where(approval_status: true).pluck(:category).compact.sort, params[:category]), include_blank: "Categoria", class: "form-control" %>
-            <%= link_to "Limpar", companies_path, class: "btn btn-secondary" %>
-            <%= submit_tag "Busca", name: "", class: "btn btn-primary company-search-button" %>
+
+        <%= select_tag :uf, options_for_select(Company.distinct.where(approval_status: true).pluck(:uf).compact.sort, params[:uf]), include_blank: "UF", class: "form-control company-filter" %>
+        <%= select_tag :segment, options_for_select(Company.distinct.where(approval_status: true).pluck(:segment).compact.sort, params[:segment]), include_blank: "Segmento", class: "form-control company-filter" %>
+        <%= select_tag :category, options_for_select(Company.distinct.where(approval_status: true).pluck(:category).compact.sort, params[:category]), include_blank: "Categoria", class: "form-control company-filter" %>
+
+        <%= text_field_tag :query,
+          params[:query],
+         class: "form-control  company-search company-filter",
+          placeholder: "Encontre uma empresa"
+        %>
+
+        <%= submit_tag "Busca", name: "", class: "btn btn-primary company-search-button company-filter" %>
+
+        <%= link_to "Limpar", companies_path, class: "btn btn-secondary company-filter" %>
+
       <% end %>
 
       <%= link_to new_company_path do %>
