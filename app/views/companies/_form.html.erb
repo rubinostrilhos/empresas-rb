@@ -18,17 +18,17 @@
     </div>
 
     <div class="form-inputs">
-      <%= f.input :category %>
+      <%= f.input :category, collection: Company::CATEGORIES %>
     </div>
 
     <div class="form-inputs">
-      <%= f.input :segment %>
+      <%= f.input :segment, collection: Company::SETORES %>
     </div>
 
     <div class="form-inputs">
       <%= f.input :uf %>
     </div>
-    
+
     <% if current_user.is_admin == true %>
     <div class="form-inputs .group-input">
       <%= f.label :status %>
