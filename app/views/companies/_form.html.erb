@@ -18,21 +18,23 @@
     </div>
 
     <div class="form-inputs">
-      <%= f.input :category %>
+      <%= f.input :category, collection: Company::CATEGORIES %>
     </div>
 
     <div class="form-inputs">
-      <%= f.input :segment %>
+      <%= f.input :segment, collection: Company::SEGMENTS %>
     </div>
 
     <div class="form-inputs">
       <%= f.input :uf %>
     </div>
 
+    <% if current_user.is_admin == true %>
     <div class="form-inputs .group-input">
       <%= f.label :status %>
       <%= f.select :status, options_for_select([['Inativo', 'Inativo'], ['Ativo', 'Ativo'], ['Pendente', 'Pendente']], f.object.status), {}, { class: 'form-control' } %>
     </div>
+    <% end %>
 
     <div class="form-inputs">
       <%= f.input :job_offer %>
