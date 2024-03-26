@@ -26,7 +26,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_03_12_140100) do
     t.boolean "ruby_stack", default: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "status", default: "Ativo"
+    t.string "status", default: "Inativo"
     t.string "site"
     t.string "category"
     t.string "uf"
