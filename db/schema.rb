@@ -23,14 +23,14 @@ ActiveRecord::Schema[7.1].define(version: 2024_03_12_140100) do
     t.string "segment"
     t.string "size"
     t.boolean "job_offer", default: false
-    t.boolean "ruby_stack", default: true
+    t.boolean "ruby_stack", default: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "status"
+    t.string "status", default: "Inativo"
     t.string "site"
     t.string "category"
     t.string "uf"
-    t.boolean "approval_status"
+    t.boolean "approval_status", default: false
     t.bigint "user_id"
     t.string "color"
     t.index ["user_id"], name: "index_companies_on_user_id"
