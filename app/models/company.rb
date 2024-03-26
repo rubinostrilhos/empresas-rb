@@ -1,6 +1,6 @@
 class Company < ApplicationRecord
   CATEGORIES = %w[Scale-up Software-house Startup Grupo].sort
-  SETORES = %w[Agro IT Finance Transport Marketing Food Tourism Healthcare Education
+  SEGMENTS = %w[Agro IT Finance Transport Marketing Food Tourism Healthcare Education
              Recruitment Fashion Media Fitness Service Media Retail Construction].sort
 
 
