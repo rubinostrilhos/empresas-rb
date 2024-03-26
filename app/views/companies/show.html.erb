@@ -26,6 +26,20 @@
   <% if current_user.is_admin? || (current_user.id == @company.user_id && @company.approval_status == false) %>
     <p><%= link_to "Editar empresa", edit_company_path(@company) %></p>
   <% end %>
+  <%# Botões de upvote e downvote %>
+  <% if user_signed_in? && current_user.is_admin? == false %>
+      <p><strong><%="Essa informação está atualizada?"%></strong></p>
+      <div class='d-flex flex-row justify-content-center'>
+
+        <p><%= button_to vote_toggle_company_path(@company.id, usefulness: 'up'), class: 'btn' do %></p>
+          <p><i class="fa-regular fa-thumbs-up fa-2xl" style="color: #861422;" title="Está atualizada"></i></p>
+        <% end %>
+        <p><%= button_to vote_toggle_company_path(@company.id, usefulness: 'down'), class: 'btn' do %></p>
+          <p><i class="fa-regular fa-thumbs-down fa-2xl" style="color: #861422;" title ="Não está atualizada"></i></p>
+        <% end %>
+      </div>
+  <% end %>
+
   <% if current_user.is_admin? %>
     <%= link_to company_path(@company),
     data:{turbo_method: :delete, turbo_confirm:"Você tem certeza que deseja apagar?"} do %>

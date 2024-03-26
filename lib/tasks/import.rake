@@ -7,17 +7,16 @@ namespace :import do
 
     CSV.foreach(file_path, headers: true) do |row|
       companies_attributes = {
-        name: row['Nome'].presence || "'FALTA #{:name}'",
-        site: row['Site'].presence || "'FALTA #{:site}'",
+        name: row['Nome'].presence || "'FALTA name'",
+        site: row['Site'].presence || "'FALTA site'",
         email: row['Contato'].presence || "faltaoemail@email.com",
-        phone: row['Telefone'].presence || "'FALTA #{:phone}'",
-        category: row['Categoria'].presence || "'FALTA #{:category}'",
-        segment: row['Setor'].presence || "'FALTA #{:segment}'",
-        uf: row['UF'].presence || "'FALTA #{:uf}'"
+        phone: row['Telefone'].presence || "'FALTA phone'",
+        category: row['Categoria'].presence || "'FALTA category'",
+        segment: row['Setor'].presence || "'FALTA segment'",
+        uf: row['UF'].presence || "'FALTA uf'"
       }
 
       Company.create!(companies_attributes)
-
     end
     puts 'Empresas importadas com sucesso!'
   end

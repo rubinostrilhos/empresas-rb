@@ -1,11 +1,11 @@
 class Company < ApplicationRecord
   CATEGORIES = %w[Scale-up Software-house Startup Grupo].sort
   SETORES = %w[Agro IT Finance Transport Marketing Food Tourism Healthcare Education
-             Recruitment Fashion Media Fitness Service Media Retail Construction].sort
-
+               Recruitment Fashion Media Fitness Service Media Retail Construction].sort
 
   has_many :favorites, dependent: :destroy
   has_many :users, through: :favorites
+  has_many :votes, dependent: :destroy
 
   validates :name, :phone, :segment,
             :status, :site, :category, :uf, presence: true

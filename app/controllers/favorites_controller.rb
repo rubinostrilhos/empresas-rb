@@ -1,5 +1,5 @@
 class FavoritesController < ApplicationController
-  before_action :set_company, only: [:create, :destroy]
+  before_action :set_company, only: %i[create destroy]
 
   def index
     @page_name = 'Home'
