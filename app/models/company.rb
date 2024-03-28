@@ -1,4 +1,9 @@
 class Company < ApplicationRecord
+  CATEGORIES = %w[Scale-up Software-house Startup Grupo].sort
+  SEGMENTS = %w[Agro IT Finance Transport Marketing Food Tourism Healthcare Education
+             Recruitment Fashion Media Fitness Service Media Retail Construction].sort
+
+
   has_many :favorites, dependent: :destroy
   has_many :users, through: :favorites
 

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_03_12_140100) do
+ActiveRecord::Schema[7.1].define(version: 2024_03_26_210959) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -30,7 +30,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_03_12_140100) do
     t.string "site"
     t.string "category"
     t.string "uf"
-    t.boolean "approval_status"
+    t.boolean "approval_status", default: false
     t.bigint "user_id"
     t.string "color"
     t.index ["user_id"], name: "index_companies_on_user_id"
