@@ -91,11 +91,12 @@ class CompaniesController < ApplicationController
 
   def vote_toggle
     @vote = @company.votes.find_by(user_id: current_user.id)
-
-    if @vote
-      @vote.toggle_usefulness
-    else
+    if @vote.nil?
       @company.votes.create(user: current_user, usefulness: params[:usefulness])
+    elsif params[:usefulness] == @vote.usefulness
+      @vote.destroy
+    else
+      @vote.toggle_usefulness
     end
     redirect_to @company
   end
