@@ -42,7 +42,7 @@
 
       <%= button_to vote_toggle_company_path(@company.id, usefulness: 'down'), class: 'btn' do %>
         <% if @company.votes.find_by(user_id: current_user.id, usefulness: 'down')  %>
-          <i class="fa-solid fa-thumbs-down fa-2xl" style="color: #861422;" title="Está atualizada"></i>
+          <i class="fa-solid fa-thumbs-down fa-2xl" style="color: #861422;" title="Não está atualizada"></i>
         <% else %>
           <i class="fa-regular fa-thumbs-down fa-2xl" style="color: #861422;" title="Não está atualizada"></i>
         <% end %>
