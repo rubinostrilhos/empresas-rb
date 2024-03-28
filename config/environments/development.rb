@@ -18,7 +18,7 @@ Rails.application.configure do
   # Enable server timing
   config.server_timing = true
 
-  config.middleware.insert_after ActionDispatch::Static, Rack::LiveReload
+  # config.middleware.insert_after ActionDispatch::Static, Rack::LiveReload
 
   # Enable/disable caching. By default caching is disabled.
   # Run rails dev:cache to toggle caching.

@@ -1,7 +1,27 @@
+form {
+  position: relative;
+}
+
 form-control:focus {
   box-shadow: 0 0 0 0.25rem rgba(246, 17, 44, 0.434);
 }
 .company-filter {
   height: 38px;
+  font-size: 12px;
 }
 
+.company-filter-button, .company-filter-button:hover, .company-filter-button:active {
+  background-color: transparent;
+  color: #000;
+  border: none;
+  position: absolute;
+  right: -4px;
+  top: 39px;
+  font-size: 13px;
+}
+
+.add-company {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+}
