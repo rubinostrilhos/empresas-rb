@@ -16,9 +16,6 @@
 
           <% menu_options = { "Home": "/", "Empresas": "/companies"} %>
 
-
-
-
           <% menu_options.each do |key, value| %>
 
            <li class="nav-item">
@@ -29,16 +26,6 @@
            </li>
 
           <% end %>
-
-
-
-
-
-
-
-
-
-
 
           <%# Menu de admin na navbar %>
           <% if current_user.is_admin?  %>
