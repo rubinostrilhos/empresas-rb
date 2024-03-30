@@ -7,3 +7,6 @@ application.debug = false
 window.Stimulus   = application
 
 export { application }
+
+import ModalController from './modal_controller'
+Stimulus.register('modal', ModalController)

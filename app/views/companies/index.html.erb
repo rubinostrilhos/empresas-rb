@@ -1,6 +1,7 @@
-<div class="container text-center">
-  <div class="companies-upper">
-      <%= image_tag("icons/xmark-solid.svg", alt: "", class: "x-mark") %>
+<div class="container text-center" data-controller="modal">
+  <div class="companies-upper modal-open" data-modal-target="modal">
+      <%= image_tag("icons/xmark-solid.svg", alt: "", class: "x-mark", data: { action: "click->modal#fecharModal", modal_target: "fechar" }) %>
+
 
     <div class="companies-number">
       <h1>EMPRESAS</h1>
@@ -11,14 +12,15 @@
 
     <div class="companies-search">
 
-      <%= image_tag("icons/sliders-icon.svg", alt: "", class: "filters") %>
+      <%# <%= image_tag("icons/sliders-icon.svg", alt: "", class: "filters") %>
+      <%= image_tag("icons/sliders-icon.svg", alt: "", class: "filter", data: { action: "click->modal#abrirModal", modal_target: "filters" }) %>
       <%= form_with url: companies_path, method: :get, class: "d-flex mb-4 mt-4" do %>
 
 
 
         <%# Filtros da busca index de companies %>
 
-        <div class="select-group" id="select-group">
+        <div class="select-group" id="select-group" data-modal-target="revelar">
           <%= select_tag :uf, options_for_select(Company.distinct.where(approval_status: true).pluck(:uf).compact.sort, params[:uf]), include_blank: "UF", class: "form-control company-filter company-select" %>
           <%= select_tag :segment, options_for_select(Company.distinct.where(approval_status: true).pluck(:segment).compact.sort, params[:segment]), include_blank: "Segmento", class: "form-control company-filter company-select" %>
           <%= select_tag :category, options_for_select(Company.distinct.where(approval_status: true).pluck(:category).compact.sort, params[:category]), include_blank: "Categoria", class: "form-control company-filter company-select" %>
@@ -36,7 +38,7 @@
 
       <% end %>
 
-      <%= link_to new_company_path, class:"add-company" do %>
+      <%= link_to new_company_path, class:"add-company add-position add-modal", data: { modal_target: "add" } do %>
         <span class="fa-solid">+</span> Adicionar nova empresa
       <% end %>
     </div>
@@ -44,7 +46,7 @@
 
 
 
-  <ul class="grid-cards">
+  <ul class="grid-cards grid-desappear" data-modal-target="grid">
     <% @companies.each do |company| %>
       <%# <li><%= link_to company.name, company_path(company.id) </li>%>
       <%= render "components/card-2", company: company %>

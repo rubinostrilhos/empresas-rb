@@ -4,6 +4,10 @@ h1 {
   font-weight: bold;
 }
 
+.modal-open {
+
+}
+
 .companies-number, .companies-upper, .companies-search, .company-search-button, .company-select, .filters {
   display: flex;
 }
@@ -83,14 +87,15 @@ h1 {
   // color: blue;
 }
 
-.filters {
+.filter {
   display: none;
 }
+
 
 .add-company {
   position: absolute;
   left: 0;
-  bottom: 0;
+  bottom: 3px;
 }
 
 .submit-group {
@@ -127,6 +132,8 @@ h1 {
     width: 500px;
     margin-left: 0px;
   }
+
+
 
 }
 
@@ -165,7 +172,9 @@ h1 {
   }
 
   #select-group {
-    margin-bottom: 40px;
+    margin-bottom: -3px;
+    margin-top: 24px;
+    display: flex;
   }
 
   .company-search {
@@ -177,25 +186,35 @@ h1 {
   }
 
   .company-filter-button, .company-filter-button:hover, .company-filter-button:active {
-    top: 41px;
+    top: 37px;
   }
 
-  .filters {
+  .filter {
     display: block;
-    height: 30px;
     width: 30px;
-    margin: 0 auto 20px auto;
+    margin-bottom: 22px;
+    margin-left: 1px;
     cursor: pointer;
+  }
+
+
+
+  .add-position {
+    position: absolute;
+    left: 100px;
+    bottom: 46px;
+    font-size: 13px;
   }
 
   .add-company {
     position: absolute;
-    left: 98px;
-    bottom: 44px;
+    left: 99px;
+    bottom: 48px;
     font-size: 13px;
   }
 
   .x-mark {
+    display: block;
     width: 20px;
     height: 20px;
     position: absolute;
@@ -203,15 +222,26 @@ h1 {
     right: 15px;
     cursor: pointer;
 }
+  .modal-open {
 
-}
+    weight:100vw;
+    height: 100vh;
+    background-color: white;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
 
-@media (max-width: 300px) {
+  .grid-desappear {
+    display: none;
+  }
 
-  .container {
+  .submit-group {
+    order: 0;
+  }
 
-    max-width: 100%;
-    margin-left: 41px;
-}
+  .select-group {
+    order: 1;
+  }
 
 }
