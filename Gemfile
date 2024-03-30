@@ -78,8 +78,3 @@ group :test do
   gem "capybara"
   gem "selenium-webdriver"
 end
-
-# # Gems to live serve
-# gem 'guard', '~> 2.18', '>= 2.18.1'
-# gem 'guard-livereload', '~> 2.5', '>= 2.5.2'
-# gem 'rack-livereload', '~> 0.5.2'
