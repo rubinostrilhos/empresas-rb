@@ -6,6 +6,7 @@ class Company < ApplicationRecord
 
   has_many :favorites, dependent: :destroy
   has_many :users, through: :favorites
+  has_many :votes, dependent: :destroy
 
   validates :name, :phone, :segment,
             :status, :site, :category, :uf, presence: true
