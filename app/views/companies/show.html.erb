@@ -1,17 +1,15 @@
 <div class="container text-center">
   <h1><%= @company.name %></h1>
-  <ul style="list-style: none">
+  <ul>
     <li><%= "Site: #{@company.site}"%></li>
     <li><%= "E-mail: #{@company.email}"%></li>
     <li><%= "Telefone: #{@company.phone}"%></li>
     <li><%= "Categoria: #{@company.category}"%></li>
     <li><%= "Setor: #{@company.segment}"%></li>
     <li><%= "UF: #{@company.uf}"%></li>
-    <% if current_user.is_admin? %>
     <li><%= "Vagas?: #{@company.job_offer}"%></li>
     <li><%= "Trabalha com Ruby?: #{@company.ruby_stack}"%></li>
     <li><%= "Status: #{@company.status}"%></li>
-    <% end %>
   </ul>
   <% if user_signed_in? %>
     <% if @favorite %>
@@ -28,28 +26,6 @@
   <% if current_user.is_admin? || (current_user.id == @company.user_id && @company.approval_status == false) %>
     <p><%= link_to "Editar empresa", edit_company_path(@company) %></p>
   <% end %>
-  <%# Botões de upvote e downvote %>
-  <% if user_signed_in? && current_user.is_admin? == false %>
-    <p><strong><%="Essa informação está atualizada?"%></strong></p>
-    <div class='d-flex flex-row justify-content-center'>
-      <%= button_to vote_toggle_company_path(@company.id, usefulness: 'up'), class: 'btn' do %>
-        <% if @company.votes.find_by(user_id: current_user.id, usefulness: 'up')  %>
-          <i class="fa-solid fa-thumbs-up fa-2xl" style="color: #861422;" title="Está atualizada"></i>
-        <% else %>
-          <i class="fa-regular fa-thumbs-up fa-2xl" style="color: #861422;" title="Está atualizada"></i>
-        <% end %>
-      <% end %>
-
-      <%= button_to vote_toggle_company_path(@company.id, usefulness: 'down'), class: 'btn' do %>
-        <% if @company.votes.find_by(user_id: current_user.id, usefulness: 'down')  %>
-          <i class="fa-solid fa-thumbs-down fa-2xl" style="color: #861422;" title="Não está atualizada"></i>
-        <% else %>
-          <i class="fa-regular fa-thumbs-down fa-2xl" style="color: #861422;" title="Não está atualizada"></i>
-        <% end %>
-      <% end %>
-    <% end %>
-  </div>
-
   <% if current_user.is_admin? %>
     <%= link_to company_path(@company),
     data:{turbo_method: :delete, turbo_confirm:"Você tem certeza que deseja apagar?"} do %>
