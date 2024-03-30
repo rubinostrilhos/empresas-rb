@@ -26,7 +26,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_03_26_210959) do
     t.boolean "ruby_stack", default: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "status", default: "Inativo"
+    t.string "status", default: "Ativo"
     t.string "site"
     t.string "category"
     t.string "uf"
@@ -62,7 +62,19 @@ ActiveRecord::Schema[7.1].define(version: 2024_03_26_210959) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  create_table "votes", force: :cascade do |t|
+    t.string "usefulness", null: false
+    t.bigint "company_id", null: false
+    t.bigint "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["company_id"], name: "index_votes_on_company_id"
+    t.index ["user_id"], name: "index_votes_on_user_id"
+  end
+
   add_foreign_key "companies", "users"
   add_foreign_key "favorites", "companies"
   add_foreign_key "favorites", "users"
+  add_foreign_key "votes", "companies"
+  add_foreign_key "votes", "users"
 end
