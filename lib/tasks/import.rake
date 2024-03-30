@@ -8,8 +8,8 @@ namespace :import do
 
     CSV.foreach(file_path, headers: true) do |row|
       companies_attributes = {
-        name: row['Nome'].presence || "'FALTA #{:name}'",
-        site: row['Site'].presence || "'FALTA #{:site}'",
+        name: row['Nome'].presence || "'FALTA name'",
+        site: row['Site'].presence || "'FALTA site'",
         email: row['Contato'].presence || "faltaoemail@email.com",
         phone: row['Telefone'].presence || "'FALTA #{:phone}'",
         category: row['Categoria'].presence || "'FALTA #{:category}'",

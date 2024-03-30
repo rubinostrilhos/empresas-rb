@@ -3,6 +3,9 @@ Rails.application.routes.draw do
   get 'companies/pending_approval', to: 'companies#pending_approval', as: 'pending_approval_companies'
   resources :companies do
     resources :favorites, only: %i[create destroy]
+    member do
+      post 'vote_toggle'
+    end
   end
 
 
