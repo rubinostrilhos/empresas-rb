@@ -109,78 +109,8 @@
   }
 }
 
+
 .box {
-  &__bg-color {
-    height: 128px;
-    width: 128px;
-    background-color: #f9b234;
-    z-index: 1;
-    position: absolute;
-    top: -75px;
-    right: -75px;
-    border-radius: 50%;
-    transition: all .5s ease;
-
-    .box:hover & {
-      transform: scale(10);
-    }
-  }
-
-  &__title {
-    font-weight: bold;
-    font-size: 20.94px;
-    color: $falu-red;
-    text-align: left;
-    z-index: 2;
-    position: relative;
-  }
-
-  &__button {
-    width: 93.76px;
-    height: 29.35px;
-    border-radius: 6px;
-    border: 1px solid $black;
-    font-size: 10.2px;
-    color: $black;
-    font-weight: bold;
-    margin-right: 33px;
-    z-index: 5;
-    transition: all .5s ease;
-
-    .box:hover & {
-      color: $white;
-      background-color: transparent;
-      border: 1px solid $white;
-    }
-  }
-
-  &__description {
-    font-size: 12.35px;
-    color: $black;
-    z-index: 2;
-    position: relative;
-    transition: color .5s ease;
-    text-align: justify;
-  }
-
-  &.box--hover {
-    &,
-    &__title,
-    &__button {
-      text-decoration: none;
-      transition: color 1.5s ease;
-      color: $black;
-    }
-
-    &__button {
-      background-color: transparent;
-    }
-
-    &__description {
-      color: #fff;
-    }
-  }
-
   display: block;
   padding: 30px 20px;
   overflow: hidden;
@@ -191,14 +121,98 @@
   border-radius: 6px;
   text-decoration: none;
   margin-bottom: 40px;
-
-  &.box--hover:hover {
-    @extend .box--hover;
-  }
 }
 
 .upper-card {
   display: flex;
   justify-content: space-between;
   margin-bottom: 20px;
+}
+
+.box:hover .bg_color {
+  -webkit-transform: scale(10);
+  -ms-transform: scale(10);
+  transform: scale(10);
+}
+.box .box-title {
+  // overflow: hidden;
+  height: 40px;
+  width: 246px;
+  font-weight: bold;
+  font-size: 20.94px;
+  color: $falu-red;
+  text-align: left;
+  z-index: 2;
+  position: relative;
+  -webkit-transition: color .3s ease-in-out;
+  -o-transition: color .3s ease-in-out;
+  transition: color .3s ease-in-out;
+}
+
+.box-button {
+  width: 93.76px;
+  height: 29.35px;
+  border-radius: 6px;
+  border: 1px solid $black;
+  font-size: 10.2px;
+  font-weight: bold;
+  margin-right: 33px;
+  z-index: 999;
+  -webkit-transition: all .5s ease;
+  -o-transition: all .5s ease;
+  transition: all .5s ease;
+}
+
+.box-button a {
+  text-decoration: none;
+  color: $black;
+
+}
+
+.box-description {
+  font-size: 12.35px;
+  color: $black;
+  z-index: 2;
+  position: relative;
+  -webkit-transition: color .5s ease;
+  -o-transition: color .5s ease;
+  transition: color .5s ease;
+  text-align: justify;
+}
+
+.bg_color {
+  height: 128px;
+  width: 128px;
+  background-color: #f9b234;
+  z-index: 1;
+  position: absolute;
+  top: -75px;
+  right: -75px;
+  border-radius: 50%;
+  -webkit-transition: all .5s ease;
+  -o-transition: all .5s ease;
+  transition: all .5s ease;
+}
+
+.box:hover,
+.box:hover .box-title {
+  text-decoration: none;
+  color: $black;
+  -webkit-transition: color .5s ease-in-out;
+  -o-transition: color .5s ease-in-out;
+  transition: color .5s ease-in-out
+}
+
+.box:hover,
+.box:hover .box-button {
+  text-decoration: none;
+  color: $black;
+  background-color: white;
+  border: 1px solid $black;
+}
+
+.box:hover,
+.box:hover .box-description {
+  text-decoration: none;
+  color: $black;
 }
