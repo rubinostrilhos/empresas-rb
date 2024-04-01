@@ -64,6 +64,11 @@ h1 {
   --bs-btn-active-border-color: none;
 }
 
+.company-filter-button, .company-filter-button:hover, .company-filter-button:active {
+  background-color: transparent !important;
+  color: #000 !important;
+}
+
 .add-company, a {
   color: black;
   text-decoration: none;
