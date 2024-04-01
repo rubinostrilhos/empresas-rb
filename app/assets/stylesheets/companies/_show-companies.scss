@@ -4,10 +4,6 @@ h1 {
   font-weight: bold;
 }
 
-.modal-open {
-
-}
-
 .companies-number, .companies-upper, .companies-search, .company-search-button, .company-select, .filters {
   display: flex;
 }
@@ -36,6 +32,7 @@ h1 {
 .company-search {
   background-color: $white;
   margin-bottom: 8px;
+  width: 135px;
 }
 
 .company-search::placeholder {
@@ -84,12 +81,16 @@ h1 {
   justify-content: center;
 }
 
+.grid-desappear {
+  display: none;
+}
+
 .container {
   max-width: 100%;
 }
 
-.company-select {
-  // color: blue;
+.company-select, .filters {
+  width: 100px;
 }
 
 .filter {
@@ -107,8 +108,13 @@ h1 {
   display: flex;
 }
 
+
 .select-group {
-  display: none;
+  display: flex;
+}
+
+.select-flex {
+  display: flex;
 }
 
 .x-mark {
@@ -137,8 +143,6 @@ h1 {
     width: 500px;
     margin-left: 0px;
   }
-
-
 
 }
 
@@ -176,10 +180,17 @@ h1 {
     flex-direction: column;
   }
 
-  #select-group {
+  .select-group-off {
+    margin-bottom: -3px;
+    margin-top: 24px;
+    display: none;
+  }
+
+  .select-group-on {
     margin-bottom: -3px;
     margin-top: 24px;
     display: flex;
+    order: 1;
   }
 
   .company-search {
@@ -202,12 +213,10 @@ h1 {
     cursor: pointer;
   }
 
-
-
   .add-position {
     position: absolute;
-    left: 100px;
-    bottom: 46px;
+    left: 33px;
+    bottom: 106px;
     font-size: 13px;
   }
 
@@ -243,10 +252,15 @@ h1 {
 
   .submit-group {
     order: 0;
+    justify-content: space-between;
   }
 
   .select-group {
     order: 1;
+  }
+
+  .company-input-search {
+    width: 202px;
   }
 
 }

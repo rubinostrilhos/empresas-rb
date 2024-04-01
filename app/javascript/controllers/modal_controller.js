@@ -18,21 +18,22 @@ export default class extends Controller {
     "filters",
     "add",
     "fechar"
+
   ]
 
   connect() {
 
     this.modalTarget.classList.remove('modal-open')
-    this.revelarTarget.classList.remove('select-group')
-    this.revelarTarget.style.display = 'none';
     this.gridTarget.classList.remove('grid-desappear')
     this.fecharTarget.classList.add('grid-desappear')
 
     this.addTarget.classList.add('add-company')
     this.addTarget.classList.remove('add-position')
 
-    // this.addTarget.style.left = "102px"
-    // this.addTarget.style.bottom = "48px"
+    this.revelarTarget.classList.add('select-group-off')
+    this.revelarTarget.classList.remove('select-group-on')
+    this.revelarTarget.classList.remove('select-group')
+    this.revelarTarget.classList.add('select-flex')
 
   }
 
@@ -42,14 +43,13 @@ export default class extends Controller {
     this.modalTarget.classList.add('modal-open')
     this.filtersTarget.classList.remove('filter')
     this.filtersTarget.classList.add('grid-desappear')
-    this.revelarTarget.classList.add('select-group')
-    this.revelarTarget.style.display = 'flex';
+    this.revelarTarget.classList.add('select-group-on')
+
     this.gridTarget.classList.add('grid-desappear')
-
-
 
     this.addTarget.classList.remove('add-company')
     this.addTarget.classList.add('add-position')
+
 
 
   }
@@ -64,8 +64,9 @@ export default class extends Controller {
 
     // this.filtersTarget.style.display = "none"
     this.modalTarget.classList.remove('modal-open')
+    this.revelarTarget.classList.add('select-group-off')
+    this.revelarTarget.classList.remove('select-group-on')
     this.revelarTarget.classList.remove('select-group')
-    this.revelarTarget.style.display = 'none';
     this.gridTarget.classList.remove('grid-desappear')
 
     this.addTarget.classList.add('add-company')

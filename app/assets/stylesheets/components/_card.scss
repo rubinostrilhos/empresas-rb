@@ -153,7 +153,7 @@
   width: 93.76px;
   height: 29.35px;
   border-radius: 6px;
-  border: 1px solid $black;
+  border: none;
   font-size: 10.2px;
   font-weight: bold;
   margin-right: 33px;
@@ -166,7 +166,7 @@
 .box-button a {
   text-decoration: none;
   color: $black;
-
+  z-index: 999;
 }
 
 .box-description {
