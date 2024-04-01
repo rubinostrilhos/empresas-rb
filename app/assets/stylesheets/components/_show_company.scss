@@ -1,0 +1,42 @@
+.card_show {
+  width: 400px; 
+  background-color: #fff;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.header {
+  background-color: #333;
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+  font-size: 26px;
+}
+
+.body {
+  padding: 20px;
+}
+
+.info {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.info-icon {
+  width: 30px; 
+  font-size: 20px;
+}
+
+.info-value {
+  flex: 1; 
+  font-size: 20px;
+  margin-left: 10px; 
+}
+
+.divider {
+  height: 1px;
+  background-color: #ccc; 
+  margin: 10px 0; 
+}
