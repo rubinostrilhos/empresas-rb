@@ -18,18 +18,18 @@
   padding: 20px;
 }
 
-.skill {
+.info {
   display: flex;
   align-items: center;
   margin-bottom: 20px;
 }
 
-.skill-icon {
+.info-icon {
   width: 30px; /* Largura desejada para o ícone */
   font-size: 20px;
 }
 
-.skill-value {
+.info-value {
   flex: 1; /* Isso fará com que o valor preencha o restante do espaço disponível */
   font-size: 20px;
   margin-left: 10px; /* Adicione margem entre o ícone e o valor */
