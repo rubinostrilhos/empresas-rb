@@ -1,5 +1,5 @@
 .card_show {
-  width: 400px; /* Largura fixa desejada */
+  width: 400px; 
   background-color: #fff;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   border-radius: 10px;
@@ -18,25 +18,25 @@
   padding: 20px;
 }
 
-.skill {
+.info {
   display: flex;
   align-items: center;
   margin-bottom: 20px;
 }
 
-.skill-icon {
-  width: 30px; /* Largura desejada para o ícone */
+.info-icon {
+  width: 30px; 
   font-size: 20px;
 }
 
-.skill-value {
-  flex: 1; /* Isso fará com que o valor preencha o restante do espaço disponível */
+.info-value {
+  flex: 1; 
   font-size: 20px;
-  margin-left: 10px; /* Adicione margem entre o ícone e o valor */
+  margin-left: 10px; 
 }
 
 .divider {
   height: 1px;
-  background-color: #ccc; /* Cor da linha divisória */
-  margin: 10px 0; /* Espaçamento entre as linhas */
+  background-color: #ccc; 
+  margin: 10px 0; 
 }

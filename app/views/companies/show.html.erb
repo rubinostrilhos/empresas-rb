@@ -3,49 +3,49 @@
     <div class="card_show">
       <div class="header"><%= @company.name %></div>
       <div class="body">
-        <div class="skill">
-          <div class="skill-icon"><i class="fa-solid fa-earth-americas" style="color: #861422;" title="Site da Empresa"></i></div>
-          <div class="skill-value"><span title="Site da Empresa"><%= @company.site %></div>
+        <div class="info">
+          <div class="info-icon"><i class="fa-solid fa-earth-americas" style="color: #861422;" title="Site da Empresa"></i></div>
+          <div class="info-value"><span title="Site da Empresa"><%= @company.site %></div>
         </div>
 
-        <div class="divider"></div> <!-- Adicionando a linha divisória -->
-        <div class="skill">
-          <div class="skill-icon"><i class="fa-solid fa-envelope" style="color: #861422;"title="E-mail da Empresa"></i></div>
-          <div class="skill-value"><span title="E-mail da Empresa"><%= @company.email %></div>
+        <div class="divider"></div> 
+        <div class="info">
+          <div class="info-icon"><i class="fa-solid fa-envelope" style="color: #861422;"title="E-mail da Empresa"></i></div>
+          <div class="info-value"><span title="E-mail da Empresa"><%= @company.email %></div>
         </div>
 
-        <div class="divider"></div> <!-- Adicionando a linha divisória -->
-        <div class="skill">
-          <div class="skill-icon"><i class="fa-solid fa-phone" style="color: #861422;"title="Telefone da Empresa"></i></div>
-          <div class="skill-value"><span title="Telefone da Empresa"><%= @company.phone %></div>
+        <div class="divider"></div> 
+        <div class="info">
+          <div class="info-icon"><i class="fa-solid fa-phone" style="color: #861422;"title="Telefone da Empresa"></i></div>
+          <div class="info-value"><span title="Telefone da Empresa"><%= @company.phone %></div>
         </div>
 
-        <div class="divider"></div> <!-- Adicionando a linha divisória -->
-        <div class="skill">
-          <div class="skill-icon"><i class="fa-solid fa-building" style="color: #861422;"title="Categoria da Empresa"></i></div>
-          <div class="skill-value"><span title="Categoria da Empresa"><%= @company.category %></div>
+        <div class="divider"></div> 
+        <div class="info">
+          <div class="info-icon"><i class="fa-solid fa-building" style="color: #861422;"title="Categoria da Empresa"></i></div>
+          <div class="info-value"><span title="Categoria da Empresa"><%= @company.category %></div>
         </div>
 
-        <div class="divider"></div> <!-- Adicionando a linha divisória -->
-        <div class="skill">
-          <div class="skill-icon"><i class="fa-solid fa-gears" style="color: #861422;"title="Segmento da Empresa"></i></div>
-          <div class="skill-value"><span title="Segmento da Empresa"><%= @company.segment %></div>
+        <div class="divider"></div> 
+        <div class="info">
+          <div class="info-icon"><i class="fa-solid fa-gears" style="color: #861422;"title="Segmento da Empresa"></i></div>
+          <div class="info-value"><span title="Segmento da Empresa"><%= @company.segment %></div>
         </div>
 
-        <div class="divider"></div> <!-- Adicionando a linha divisória -->
-        <div class="skill">
-          <div class="skill-icon"><i class="fa-solid fa-map-location-dot" style="color: #861422;"title="Estado da Empresa"></i></i></div>
-          <div class="skill-value"><span title="Estado da Empresa"><%= @company.uf %></div>
+        <div class="divider"></div> 
+        <div class="info">
+          <div class="info-icon"><i class="fa-solid fa-map-location-dot" style="color: #861422;"title="Estado da Empresa"></i></i></div>
+          <div class="info-value"><span title="Estado da Empresa"><%= @company.uf %></div>
         </div>
 
         <% if user_signed_in? && current_user.is_admin? == false %>
         <% if @favorite %>
-          <p><%= button_to company_favorite_path(@company, @favorite), method: :delete, class: 'btn' do %></p>
+          <p><%= button_to company_favorite_path(@company, @favorite), method: :delete, class: 'btn', style: 'background: none; border: none;' do %></p>
             <i class="fa-solid fa-star fa-2x" style="color: rgb(250, 200, 0);" title="Clique para remover dos favoritos"></i>
           <% end %>
         <% else %>
-          <p><%= button_to company_favorites_path(@company), class: 'btn' do %></p>
-            <i class="fa-regular fa-star fa-2x" title="Clique para adicionar aos favoritos"></i>
+          <p><%= button_to company_favorites_path(@company), class: 'btn', style: 'background: none; border: none;' do %></p>
+            <i class="fa-regular fa-star fa-2x" style="color: rgb(0, 0, 0);" title="Clique para adicionar aos favoritos"></i>
           <% end %>
         <% end %>
       <% end %>
@@ -54,14 +54,14 @@
       <% if user_signed_in? && current_user.is_admin? == false %>
       <p><strong><%="Essa informação está atualizada?"%></strong></p>
       <div class='d-flex flex-row justify-content-center'>
-        <%= button_to vote_toggle_company_path(@company.id, usefulness: 'up'), class: 'btn' do %>
+        <%= button_to vote_toggle_company_path(@company.id, usefulness: 'up'), class: 'btn', style: 'background: none; border: none;' do %>
           <% if @company.votes.find_by(user_id: current_user.id, usefulness: 'up')  %>
             <i class="fa-solid fa-thumbs-up fa-2xl" style="color: #861422;" title="Está atualizada"></i>
           <% else %>
             <i class="fa-regular fa-thumbs-up fa-2xl" style="color: #861422;" title="Está atualizada"></i>
           <% end %>
         <% end %>
-        <%= button_to vote_toggle_company_path(@company.id, usefulness: 'down'), class: 'btn' do %>
+        <%= button_to vote_toggle_company_path(@company.id, usefulness: 'down'), class: 'btn', style: 'background: none; border: none;' do %>
           <% if @company.votes.find_by(user_id: current_user.id, usefulness: 'down')  %>
             <i class="fa-solid fa-thumbs-down fa-2xl" style="color: #861422;" title="Não está atualizada"></i>
           <% else %>
@@ -70,32 +70,29 @@
           <% end %>
         <% end %>
       </div>
-
       </div>
     </div>
-
-
-    </div>
+  </div>
     <div class="d-flex justify-content-center align-items-center mt-3 fs-3"><%= link_to companies_path do %>
       <i class="fa-solid fa-circle-chevron-left" style="color: #333333;"></i>
       <% end %>
-      </div>
-</div>
-<div class="text-center mt-4">
-<% if current_user.is_admin? %>
-<p><%= "Vagas?: #{@company.job_offer}"%></p>
-<p><%= "Trabalha com Ruby?: #{@company.ruby_stack}"%></p>
-<p><%= "Status: #{@company.status}"%></p>
-<% end %>
+    </div>
+  </div>
+  <div class="text-center mt-4">
+    <% if current_user.is_admin? %>
+      <p><%= "Vagas?: #{@company.job_offer}"%></p>
+      <p><%= "Trabalha com Ruby?: #{@company.ruby_stack}"%></p>
+      <p><%= "Status: #{@company.status}"%></p>
+    <% end %>
 
-          <% if current_user.is_admin? || (current_user.id == @company.user_id && @company.approval_status == false) %>
+    <% if current_user.is_admin? || (current_user.id == @company.user_id && @company.approval_status == false) %>
       <p><%= link_to "Editar empresa", edit_company_path(@company) %></p>
-      <% end %>
+    <% end %>
 
-      <% if current_user.is_admin? %>
-            <%= link_to company_path(@company),
-            data:{turbo_method: :delete, turbo_confirm:"Você tem certeza que deseja apagar?"} do %>
-            <i class="fa-solid fa-trash"></i>
-            <% end %>
-          <% end %>
-      </div>
+    <% if current_user.is_admin? %>
+      <%= link_to company_path(@company),
+      data:{turbo_method: :delete, turbo_confirm:"Você tem certeza que deseja apagar?"} do %>
+        <i class="fa-solid fa-trash"></i>
+        <% end %>
+      <% end %>
+  </div>
