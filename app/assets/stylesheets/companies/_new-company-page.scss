@@ -1,0 +1,63 @@
+.sign-up-page {
+  display: flex;
+  flex-direction: column;
+}
+
+.new-page-lower-part {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.right-form-part {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.btn-ruby {
+  background-color: #861422;
+  width: 120px;
+  border: none;
+  margin-top: 455px;
+}
+
+.btn-ruby:hover {
+  background-color: #690f1a;
+}
+
+.btn-ruby:active {
+  background-color: #690f1a;
+}
+
+.btn-ruby-font-color {
+  color: $white;
+}
+
+.btn-ruby-font-color {
+  color: $white;
+}
+
+[type="submit"]:not(:disabled) {
+  cursor: pointer;
+  color: white;
+  font-weight: bold;
+}
+
+[type="submit"]:not(:disabled):hover {
+  background-color: #690f1a
+}
+
+[type="submit"]:not(:disabled):active {
+  background-color: #690f1a
+}
+
+.btn, :not(.btn-check) + .btn:active {
+  color: $white;
+  background-color: #690f1a;
+  border-color: none;
+}
+
+.select {
+  display: flex;
+}

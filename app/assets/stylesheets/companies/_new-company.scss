@@ -1,6 +1,15 @@
+.company-form {
+  display: flex;
+  width: 1500px;
+  justify-content: center;
+  /* gap: 500px; */
+  margin-bottom: 100px;
+}
+
 .company-form .new_company {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
 }
 
 .company-form .form-control {
@@ -19,6 +28,162 @@
 .company-form .string,
 .company-form .email,
 .company-form .tel,
-.company-form .form-inputs {
+.company-form .form-inputs .select {
     display: flex;
+    align-items: center;
+    width: 100%;
 }
+
+abbr {
+  display: none;
+}
+
+.string, .email, .tel, .select, label {
+  font-size: 21.34px;
+}
+
+.form-check {
+  display: flex;
+  align-items: center;
+  min-height: 1.5rem;
+  /* padding-left: 1.5em; */
+  width: 100%;
+  justify-content: space-between;
+  margin-bottom: 0.125rem;
+  margin-top: 0.125rem;
+}
+
+
+.left-form-part {
+  display: flex;
+  width: 50%;
+  margin-right: 169px;
+}
+
+.right-form-part {
+  margin-bottom: 100px;
+}
+
+.company-form .form-inputs {
+  display: flex;
+  align-items: flex-start;
+  /* justify-content: space-between; */
+  /* gap: 200px; */
+  width: 100%;
+  justify-self: end;
+}
+
+.company_job_offer {
+  margin-top: 20px;
+  width: 100%;
+}
+
+.page-title {
+  margin-bottom: 100px;
+}
+
+fieldset {
+  display: flex;
+}
+
+.form-check {
+
+  padding-left: 0;
+
+}
+
+.form-check-input {
+  order: 1;
+}
+
+.company_ruby_stack {
+  width: 100%;
+}
+
+.group-input {
+  margin-bottom: 20px;
+}
+
+// #company_segment, #company_category, #company_phone {
+//   width: 817px;
+// }
+
+.color-alignment {
+  display: flex;
+  align-items: baseline;
+  gap: 0;
+}
+
+#color-card-selected {
+  width: 130px;
+
+}
+
+
+@media (max-width: 863px) {
+
+  .company-form {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    justify-content: center;
+    gap: 0px;
+    margin-bottom: 0px;
+}
+
+.right-form-part {
+  display: flex;
+  flex-direction: column;
+  align-items: center !important;
+  margin-bottom: 50px;
+}
+
+.left-form-part {
+  display: flex;
+  width: 100%;
+  margin-right: 0px;
+  padding: 0 30px;
+}
+
+.company-form .form-inputs {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 0;
+  flex-direction: row;
+  /* width: 100%; */
+  justify-self: end;
+}
+
+.company-form .string, .company-form .email, .company-form .tel, .company-form .form-inputs .select {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.company_color {
+  padding: 0px 30px;
+}
+
+.btn-ruby {
+  background-color: #861422 !important;
+  width: 120px;
+  border: none;
+  margin-top: 30px !important;
+}
+
+[type="submit"]:not(:disabled) {
+  background-color: #861422 !important;
+  cursor: pointer;
+  color: white;
+  font-weight: bold;
+}
+
+.btn:first-child:active, .btn.active, .btn.show {
+  color: $white;
+  background-color: var(--bs-btn-active-bg);
+  border-color: transparent !important;
+}
+
+
+ }

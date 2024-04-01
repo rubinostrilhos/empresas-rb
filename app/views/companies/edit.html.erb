@@ -1,6 +1,6 @@
 <% if current_user.is_admin? %>
-  <div class="container">
-    <h1>Editar <%= @company.name %></h1>
+  <div class="container container-edit">
+    <h1 class="edit-title">Editar <%= @company.name %></h1>
     <%= render 'form', company: @company %>
     <p><%= link_to "Back to company", @company  %></p>
   </div>
