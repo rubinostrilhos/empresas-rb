@@ -1,0 +1,36 @@
+.login-title {
+  text-align: center;
+  margin: 100px 0;
+}
+
+#new_user {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#new_user label {
+  text-align: center;
+}
+
+.links-login {
+  display: flex;
+  flex-direction: column;
+  margin-top: 30px;
+}
+
+.user_email #user_email {
+  width: 270px;
+}
+
+.user_password #user_password {
+  width: 270px;
+}
+
+.log-in-lower-part {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-direction: column;
+  margin-right: 88px;
+}
