@@ -20,7 +20,7 @@
 
         <%# Filtros da busca index de companies %>
 
-        <div class="select-group" id="select-group" data-modal-target="revelar">
+        <div class="select-group select-group-on select-group-off select-flex" data-modal-target="revelar">
           <%= select_tag :uf, options_for_select(Company.distinct.where(approval_status: true).pluck(:uf).compact.sort, params[:uf]), include_blank: "UF", class: "form-control company-filter company-select" %>
           <%= select_tag :segment, options_for_select(Company.distinct.where(approval_status: true).pluck(:segment).compact.sort, params[:segment]), include_blank: "Segmento", class: "form-control company-filter company-select" %>
           <%= select_tag :category, options_for_select(Company.distinct.where(approval_status: true).pluck(:category).compact.sort, params[:category]), include_blank: "Categoria", class: "form-control company-filter company-select" %>
@@ -29,10 +29,10 @@
         <div class="submit-group">
           <%= text_field_tag :query,
             params[:query],
-           class: "form-control company-search company-filter",
+           class: "form-control company-search company-filter company-input-search",
             placeholder: "Encontrar"
           %>
-          <%= submit_tag "Busca", name: "", class: "btn btn-primary company-search-button company-filter" %>
+          <%= submit_tag "Busca", name: "", class: "btn btn-primary company-search-button company-search-button-modal company-filter" %>
           <%= link_to "Limpar", companies_path, class: "btn btn-secondary company-filter company-filter-button" %>
         </div>
 

@@ -5,8 +5,11 @@
       <p class="box-title text-selector">
         <%=company.name%>
       </p>
-      <button class="box-button text-selector">
-        <%= link_to 'Saiba mais', company_path(company) %>
+      <%= link_to company_path(company), class: "box-button text-selector" do %>
+        <button class="box-button text-selector">
+          Saiba mais
+        </button>
+      <% end %>
       </button>
     </div>
 
