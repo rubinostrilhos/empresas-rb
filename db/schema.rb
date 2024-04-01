@@ -30,7 +30,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_03_26_210959) do
     t.string "site"
     t.string "category"
     t.string "uf"
-    t.boolean "approval_status"
+    t.boolean "approval_status", default: false
     t.bigint "user_id"
     t.string "color"
     t.index ["user_id"], name: "index_companies_on_user_id"

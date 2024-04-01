@@ -1,0 +1,42 @@
+.card_show {
+  width: 400px; /* Largura fixa desejada */
+  background-color: #fff;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.header {
+  background-color: #333;
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+  font-size: 26px;
+}
+
+.body {
+  padding: 20px;
+}
+
+.skill {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.skill-icon {
+  width: 30px; /* Largura desejada para o ícone */
+  font-size: 20px;
+}
+
+.skill-value {
+  flex: 1; /* Isso fará com que o valor preencha o restante do espaço disponível */
+  font-size: 20px;
+  margin-left: 10px; /* Adicione margem entre o ícone e o valor */
+}
+
+.divider {
+  height: 1px;
+  background-color: #ccc; /* Cor da linha divisória */
+  margin: 10px 0; /* Espaçamento entre as linhas */
+}
