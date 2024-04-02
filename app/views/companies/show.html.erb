@@ -8,31 +8,31 @@
           <div class="info-value"><span title="Site da Empresa"><%= @company.site %></div>
         </div>
 
-        <div class="divider"></div> 
+        <div class="divider"></div>
         <div class="info">
           <div class="info-icon"><i class="fa-solid fa-envelope" style="color: #861422;"title="E-mail da Empresa"></i></div>
           <div class="info-value"><span title="E-mail da Empresa"><%= @company.email %></div>
         </div>
 
-        <div class="divider"></div> 
+        <div class="divider"></div>
         <div class="info">
           <div class="info-icon"><i class="fa-solid fa-phone" style="color: #861422;"title="Telefone da Empresa"></i></div>
           <div class="info-value"><span title="Telefone da Empresa"><%= @company.phone %></div>
         </div>
 
-        <div class="divider"></div> 
+        <div class="divider"></div>
         <div class="info">
           <div class="info-icon"><i class="fa-solid fa-building" style="color: #861422;"title="Categoria da Empresa"></i></div>
           <div class="info-value"><span title="Categoria da Empresa"><%= @company.category %></div>
         </div>
 
-        <div class="divider"></div> 
+        <div class="divider"></div>
         <div class="info">
           <div class="info-icon"><i class="fa-solid fa-gears" style="color: #861422;"title="Segmento da Empresa"></i></div>
           <div class="info-value"><span title="Segmento da Empresa"><%= @company.segment %></div>
         </div>
 
-        <div class="divider"></div> 
+        <div class="divider"></div>
         <div class="info">
           <div class="info-icon"><i class="fa-solid fa-map-location-dot" style="color: #861422;"title="Estado da Empresa"></i></i></div>
           <div class="info-value"><span title="Estado da Empresa"><%= @company.uf %></div>
@@ -78,21 +78,44 @@
       <% end %>
     </div>
   </div>
-  <div class="text-center mt-4">
-    <% if current_user.is_admin? %>
-      <p><%= "Vagas?: #{@company.job_offer}"%></p>
-      <p><%= "Trabalha com Ruby?: #{@company.ruby_stack}"%></p>
-      <p><%= "Status: #{@company.status}"%></p>
-    <% end %>
 
-    <% if current_user.is_admin? || (current_user.id == @company.user_id && @company.approval_status == false) %>
-      <p><%= link_to "Editar empresa", edit_company_path(@company) %></p>
-    <% end %>
+  <% if current_user.is_admin? %>
+    <div class="container d-flex justify-content-center align-items-center text-center mt-4">
+      <div class="card_show">
+        <div class="header">Painel do Administrador</div>
+        <div class="body">
+          <div class="info">
+            <div class="info-icon">Vaga?</i></div>
+            <div class="info-value"><span title="Empresa tem vaga?"><%= @company.job_offer %></div>
+          </div>
 
+          <div class="divider"></div>
+          <div class="info">
+            <div class="info-icon">Ruby?</i></div>
+            <div class="info-value"><span title="Empresa trabalha com Ruby?"><%= @company.ruby_stack %></div>
+          </div>
+
+          <div class="divider"></div>
+          <div class="info">
+            <div class="info-icon">Status</i></div>
+            <div class="info-value"><span title="Status da Empresa"><%= @company.status %></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  <% end %>
+
+  <div class="d-flex justify-content-center align-items-center mt-3 fs-4">
     <% if current_user.is_admin? %>
-      <%= link_to company_path(@company),
-      data:{turbo_method: :delete, turbo_confirm:"Você tem certeza que deseja apagar?"} do %>
-        <i class="fa-solid fa-trash"></i>
+        <%= link_to company_path(@company),
+        data:{turbo_method: :delete, turbo_confirm:"Você tem certeza que deseja apagar?"} do %>
+          <i class="fa-solid fa-trash" style="color: #861422;"></i>
         <% end %>
       <% end %>
+
+    <% if current_user.is_admin? || (current_user.id == @company.user_id && @company.approval_status == false) %>
+        <%= link_to edit_company_path(@company) do %>
+        <i class="fa-solid fa-pen" style="color: #333333; margin-left: 40px;"></i>
+        <% end  %>
+    <% end %>
   </div>
