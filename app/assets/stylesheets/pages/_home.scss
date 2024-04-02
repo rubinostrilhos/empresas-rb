@@ -18,19 +18,20 @@
   place-items: center;
   top: 0;
   left: 0;
-  color: white;
+  color: rgb(255, 255, 255);
   font-weight: bold;
   font-size: 31px;
 }
 
 .type {
-  width: 22ch;
-  animation: typing 2s steps(21), blink .5s step-end infinite alternate;
+  width: 18ch;
+  animation: typing 2s steps(18), blink 0.5s step-end infinite alternate;
   white-space: nowrap;
   overflow: hidden;
   border-right: 3px solid;
-  font-family: monospace;
+  font-family: "Poppins";
   font-size: 2em;
+  z-index: 1;
 }
 
 @keyframes typing {
