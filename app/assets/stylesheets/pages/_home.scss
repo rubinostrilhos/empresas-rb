@@ -1,1 +1,46 @@
 // Specific CSS for your home-page
+
+
+
+// Efeito Typewriter
+
+main {
+  display: grid;
+  align-items: center;
+  padding: 4rem;
+  min-height: 100vh;
+  background: linear-gradient(#eff0f3, #efe0e3);
+}
+
+.container {
+  display: grid;
+  justify-items: start;
+  gap: 2rem;
+}
+
+[data-typewriter] {
+  font-family: system-UI;
+  font-weight: bold;
+  font-size: 4.5rem;
+  color: #d9376e;
+  height: 6rem;
+  border-right: .8rem solid transparent;
+  padding: .6rem;
+}
+
+[data-typewriter]:not(.typing){
+  animation: blink-caret 1.1s step-end infinite;
+}
+
+@keyframes blink-caret {
+  0%,
+  100% {
+    border-color: transparent
+  }
+
+  50% {
+    border-color: #ff8e3c;
+  }
+}
+
+// Fim Efeito Typewriter
