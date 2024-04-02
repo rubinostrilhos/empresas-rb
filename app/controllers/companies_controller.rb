@@ -1,6 +1,6 @@
 class CompaniesController < ApplicationController
   before_action :find_company, only: %i[show edit update destroy approve reject vote_page vote_toggle]
-  before_action :authenticate_user!, only: %i[vote_page vote_toggle]
+  before_action :authenticate_user!
 
   def index
     @page_name = 'Empresas'
