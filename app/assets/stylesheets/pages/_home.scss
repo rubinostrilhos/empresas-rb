@@ -1,1 +1,524 @@
-// Specific CSS for your home-page
+.first-child-white {
+  margin-top: 200px;
+}
+
+.white-part {
+  height: 500px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.gray-part {
+
+  display: flex;
+  justify-content: center;
+  background-color: #f5f5f5;
+  height: 1024px;
+  width: 100%;
+  -webkit-clip-path: polygon(30% 20%, 100% 0, 100% 80%, 30% 100%, 0 79%, 0 0);
+  clip-path: polygon(30% 20%, 100% 0, 100% 80%, 30% 100%, 0 79%, 0 0);
+  position: relative;
+  flex-direction: column;
+  align-items: center;
+
+}
+
+.gray-part h1 {
+  color: #861422;
+  top: 93px;
+  right: 277px;
+  font-size: 29px;
+  margin-top: 30px;
+}
+
+.gray-part p {
+  color: #000000;
+  top: 288px;
+  right: 105px;
+  font-size: 20px;
+  width: 511px;
+  line-height: 22px;
+}
+
+.gray-part-img {
+  width: 549px;
+  height: 361px;
+  margin-top: 140px;
+  display: flex;
+  flex-direction: column;
+  margin-top: 218px;
+}
+
+
+.white-part h1 {
+  text-align: center;
+}
+
+.img-card {
+  display: flex;
+  width: 800px;
+  height: 360px;
+  align-items: center;
+  gap: 40px;
+  text-align: justify;
+}
+
+
+.landing-card-img  {
+  width: 300px;
+  height: 300px;
+  object-fit: cover;
+  object-position: right;
+}
+
+.landing-card-group {
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.texts-card {
+  display: flex;
+  flex-direction: column;
+}
+
+.texts-card h2 {
+  font-weight: bold;
+  text-align: left;
+  font-size: 29px;
+  margin-bottom: 20px;
+  color: #861422;
+}
+
+h5 {
+  font-size: 17px;
+  font-weight: bold;
+}
+
+.landing-card-shadow {
+  width: 300px;
+  height: 300px;
+  background-color: #f4f4f4;
+  position: absolute;
+  z-index: -1;
+  margin-top: 90px;
+  margin-left: -575px;
+}
+
+.display-flex {
+  flex-direction: column;
+  height: 600px;
+}
+
+.title-dev {
+  color: #861422;
+  font-size: 29px;
+  margin-top: 30px;
+}
+
+.desc-dev {
+  width: 511px;
+  text-align: justify;
+  margin-bottom: 159px;
+}
+
+.desc-emp {
+  margin-bottom: 100px;
+}
+
+.devs {
+  display: flex;
+  flex-direction: column;
+  margin-top: 100px;
+}
+
+.devs-one {
+  display: flex;
+}
+
+.devs-two {
+  display: flex;
+}
+
+.photo-dev {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  object-fit: contain;
+}
+
+.anthony, .caio-alves, .caio, .felipe, .rafael, .ronalde {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 250px;
+}
+
+.anthony .photo-dev, .ronalde .photo-dev, .caio .photo-dev {
+  object-fit: cover;
+}
+
+.dev-desc {
+  width: 200px !important;
+}
+
+.dev-group {
+  margin: 100px 0;
+}
+
+.dev-name {
+  color: #861422 !important;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.apoiadores {
+  margin-bottom: 527px;
+}
+
+.apoiadores h1 {
+
+  margin-bottom: 150px;
+  margin-top: 200px;
+  color: #861422;
+  top: 93px;
+  right: 277px;
+  font-size: 29px;
+
+}
+
+.logo-apoio {
+  width: 175px;
+}
+
+.logo-group {
+  display: flex;
+  gap: 40px;
+}
+
+
+@media (max-width: 863px) {
+
+  .gray-part h1, .gray-part .h1 {
+    color: #861422;
+    top: 93px;
+    right: 277px;
+    font-size: 29px;
+    margin-bottom: 10px;
+  }
+
+  desc-dev {
+    width: 511px;
+    text-align: justify;
+    margin-bottom: 151px;
+    margin-top: 20px;
+  }
+
+}
+
+
+@media (max-width: 716px) {
+
+  .white-part {
+    height: 467px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 235px;
+    padding-bottom: 460px;
+  }
+
+
+  .devs {
+
+    display: flex;
+    flex-direction: column;
+    margin-top: 100px;
+    flex-direction: column;
+
+  }
+
+
+  .dev-group {
+
+    padding-top: 885px;
+    padding-bottom: 1146px;
+    margin: 100px 0;
+
+  }
+
+
+  .devs-one {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .devs-two {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .title-dev {
+    color: #861422;
+    font-size: 29px;
+    margin-bottom: 15px;
+    margin-top: 15px;
+    width: 322px;
+  }
+
+  .dev-group h1 {
+    color: #861422;
+    top: 93px;
+    right: 277px;
+    font-size: 29px;
+    margin-bottom: 10px;
+    margin-top: 144px;
+    width: 228px;
+    text-align: center;
+  }
+
+  .img-card {
+
+    flex-direction: column;
+  }
+
+  .landing-card-group {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 50px;
+}
+
+
+  .landing-card-shadow {
+    width: 300px;
+    height: 177px;
+    background-color: #f4f4f4;
+    position: absolute;
+    z-index: -1;
+    margin-top: -131px;
+    margin-left: -49px;
+  }
+
+  .texts-card {
+    display: flex;
+    flex-direction: column;
+    width: 457px;
+  }
+
+  .desc-dev, .desc-emp {
+    font-size: 16px !important;
+  }
+
+  .desc-dev {
+    width: 260px;
+    text-align: justify;
+    margin-bottom: 159px;
+}
+
+  .gray-part {
+
+    display: flex;
+    justify-content: center;
+    background-color: #f5f5f5;
+    height: 1024px;
+    width: 100%;
+    -webkit-clip-path: polygon(30% 6%, 100% 0, 100% 80%, 30% 86%, 0 79%, 0 0);
+    clip-path: polygon(30% 6%, 100% 0, 100% 80%, 30% 86%, 0 79%, 0 0);
+    position: relative;
+    flex-direction: column;
+    align-items: center;
+
+  }
+
+  .gray-part-img {
+    width: 297px;
+    height: 204px;
+    margin-top: -95px;
+    display: flex;
+    flex-direction: column;
+    margin-top: 30px;
+  }
+
+  .gray-part p {
+    width: 269px;
+  }
+
+  .gray-part h1{
+    margin-top: 32px;
+    margin-right: 35px;
+}
+
+  .texts-card {
+    display: flex;
+    flex-direction: column;
+    width: 276px;
+  }
+
+  .display-flex {
+
+    height: 546px;
+    margin-bottom: -393px;
+  }
+
+  .apoiadores {
+    margin-bottom: -477px;
+    margin-top: -1408px;
+  }
+
+  .logo-group {
+    display: flex;
+    flex-direction: column;
+    gap: 130px;
+  }
+
+}
+
+@media (max-width: 380px) {
+
+  .white-part {
+    height: 547px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 200px;
+  }
+
+
+  .dev-group {
+
+    height: 2178px;
+    padding-top: -107px;
+    padding-bottom: 1130px;
+    margin: 100px 0;
+
+  }
+
+  .devs {
+
+    display: flex;
+    flex-direction: column;
+    margin-top: 100px;
+    flex-direction: column;
+
+  }
+
+  .devs-one {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .devs-two {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .title-dev {
+    color: #861422;
+    font-size: 29px;
+    margin-bottom: 15px;
+    margin-top: 30px;
+  }
+
+  .dev-group h1 {
+    color: #861422;
+    top: 93px;
+    right: 277px;
+    font-size: 29px;
+    margin-bottom: 10px;
+    margin-top: 744px;
+    text-align: center;
+  }
+
+  .img-card {
+
+    flex-direction: column;
+  }
+
+  .landing-card-img {
+    width: 300px;
+    height: 300px;
+    -o-object-fit: cover;
+    object-fit: cover;
+    -o-object-position: right;
+    object-position: right;
+    margin-top: -222px;
+    // margin-bottom: 157px;
+}
+
+  .landing-card-shadow {
+    width: 300px;
+    height: 177px;
+    background-color: #f4f4f4;
+    position: absolute;
+    z-index: -1;
+    margin-top: -598px;
+    margin-left: -25px;
+  }
+
+  .texts-card {
+    display: flex;
+    flex-direction: column;
+    width: 276px;
+  }
+
+  .desc-dev, .desc-emp {
+    font-size: 16px !important;
+  }
+
+  .desc-dev {
+    width: 313px;
+    text-align: justify;
+    margin-bottom: 0px;
+  }
+
+  .gray-part {
+
+    display: flex;
+    justify-content: center;
+    background-color: #f5f5f5;
+    width: 100%;
+    -webkit-clip-path: polygon(30% 6%, 100% 0, 100% 80%, 30% 86%, 0 79%, 0 0);
+    clip-path: polygon(30% 6%, 100% 0, 100% 80%, 30% 86%, 0 79%, 0 0);
+    position: relative;
+    flex-direction: column;
+    align-items: center;
+
+  }
+  .dev-part-img {
+    // margin-bottom: 498px;
+    margin-top: -498px;
+  }
+
+  .display-flex {
+    height: 546px;
+    margin-bottom: -575px;
+    height: 372px;
+}
+
+  .apoio {
+
+  }
+
+  .apoiadores {
+    margin-bottom: 1167px;
+  }
+
+  .logo-group {
+    display: flex;
+    flex-direction: column;
+    gap: 130px;
+  }
+
+}

@@ -13,8 +13,20 @@
 
   <body>
 
-    <%= render "shared/navbar" %>
+    <% if current_user %>
+
+      <%= render "shared/navbar" %>
+
+    <% else %>
+
+      <%= render "shared/teste" %>
+
+    <% end%>
+
+
+
     <%= render "shared/flashes" %>
+
 
     <%= yield %>
   </body>

@@ -10,3 +10,4 @@ export { application }
 
 import ModalController from './modal_controller'
 Stimulus.register('modal', ModalController)
+
