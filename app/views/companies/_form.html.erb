@@ -11,7 +11,7 @@
         <%= f.input :email %>
       </div>
       <div class="form-inputs form-inputs-telefone">
-        <%= f.input :phone, label:"Telefone" %>
+        <%= f.input :phone, label:"Telefone", input_html: { type: 'number' } %>
       </div>
       <div class="form-inputs form-inputs-categoria">
         <%= f.input :category, collection: Company::CATEGORIES, label:"Categoria" %>

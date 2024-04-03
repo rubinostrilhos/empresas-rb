@@ -1,10 +1,11 @@
-<h2>Sign up</h2>
+<div class="text-center"><h2>Inscrever-se</h2></div>
 
 <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= f.error_notification %>
 
   <div class="form-inputs">
     <%= f.input :email,
+                label: "E-mail",
                 required: true,
                 autofocus: true,
                 input_html: { autocomplete: "email" }%>
@@ -18,23 +19,25 @@
                 autofocus: true,
                 input_html: { autocomplete: "stack" }%>
     <%= f.input :employed, as: :boolean,
+                label: "Empregado(a) na área?",
                 input_html: { autocomplete: "Empregado?" }  %>
      <%= f.input :linkedin,
                 required: false,
                 autofocus: true,
                 input_html: { autocomplete: "LinkedIn" }%>
     <%= f.input :password,
+                label: "Senha",
                 required: true,
-                hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
+                hint: ("mínimo de #{@minimum_password_length} caracteres " if @minimum_password_length),
                 input_html: { autocomplete: "new-password" } %>
     <%= f.input :password_confirmation,
+                label: "Confirme a Senha",
                 required: true,
                 input_html: { autocomplete: "new-password" } %>
   </div>
 
   <div class="form-actions">
-    <%= f.button :submit, "Sign up" %>
+    <%= f.button :submit, "Inscrever-se" %>
   </div>
+  <%= render "devise/shared/links" %>
 <% end %>
-
-<%= render "devise/shared/links" %>
