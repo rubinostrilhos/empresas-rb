@@ -1,33 +1,110 @@
-<div class="container text-center">
+<div class="container-landing">
+  <section class="white-part">
 
-  <%= image_tag("banner.png", alt: "", class: "banner") %>
-  <%= image_tag("logo_vazada.png", alt: "", class: "vazada") %>
+    <div class="landing-card-group">
+
+      <div class="img-card">
+        <%= image_tag "photo-card.png", class: "landing-card-img" %>
+        <div class="texts-card">
+          <h2>Descubra um mundo em Ruby</h2>
+          <h5>Rubistas, onde estão? Como vivem? O que comem?</h5>
+          <p>Eles são muitos, mas talvez estejam desencontrados e a nossa missão é reuní-los. É aqui que empresas e desenvolvedores apaixonados por Ruby se emcontram! Além de formar uma comunidade Rubista, também queremos despertar o interesse de novos desenvolvedores pela linguagem, afinal todos sabem que Ruby é a linguagem amiga do desenvolvedor, e quem não gosta de uma nova amizade? =D </p>
+        </div>
+      </div>
+      <div class="landing-card-shadow"></div>
+
+    </div>
+
+  </section>
 
 
-  <%# <div class="wrapper">
-    <div class="type">Conectando Rubistas. </div>
-  </div> %>
 
+
+  <section class="gray-part">
+
+
+        <%= image_tag "empresas", class: "gray-part-img" %>
+        <h1>Para empresas</h1>
+        <p class="desc-emp">Encontre o melhor profissional para a sua empresa! Junte-se à maior central de empresas de Ruby do Brasil. A comunidade rubista cresce mais a cada ano pela sua praticidade e robustez, e esse espaço certamente te conecgará com o profissional que você precisa! </p>
+
+
+  </section>
+
+
+
+
+  <section class="white-part display-flex">
+
+        <%= image_tag "desenvolvedores", class: "gray-part-img dev-part-img" %>
+        <h1 class=" title-dev">Para desenvolvedores</h1>
+        <p class="desc-dev">Encontre o melhor profissional para a sua empresa! Junte-se à maior central de empresas de Ruby do Brasil. A comunidade rubista cresce mais a cada ano pela sua praticidade e robustez, e esse espaço certamente te conecgará com o profissional que você precisa! </p>
+
+  </section>
+
+
+
+
+  <section class="gray-part dev-group">
+
+    <h1>Time de desenvolvimento</h1>
+
+    <div class="devs">
+
+      <div class="devs-one">
+        <div class="anthony">
+          <%= image_tag "anthony", class: "photo-dev" %>
+          <p class="dev-name">Anthony Vieira</p>
+          <p class="dev-desc">bla bla bla bla bla bla bla bla bla bla bla bla bla</p>
+        </div>
+        <div class="caio-alves">
+          <%= image_tag "caio-alves", class: "photo-dev" %>
+          <p class="dev-name">Caio Alves</p>
+          <p class="dev-desc">bla bla bla bla bla bla bla bla bla bla bla bla bla</p>
+        </div>
+        <div class="caio">
+          <%= image_tag "caio", class: "photo-dev" %>
+          <p class="dev-name">Caio Rocha</p>
+          <p class="dev-desc">bla bla bla bla bla bla bla bla bla bla bla bla bla</p>
+        </div>
+      </div>
+
+      <div class="devs-two">
+        <div class="felipe">
+          <%= image_tag "felipe", class: "photo-dev" %>
+          <p class="dev-name">Felipe Abdo</p>
+          <p class="dev-desc">bla bla bla bla bla bla bla bla bla bla bla bla bla</p>
+        </div>
+        <div class="rafael">
+          <%= image_tag "rafael", class: "photo-dev" %>
+          <p class="dev-name">Rafael Santos</p>
+          <p class="dev-desc" >bla bla bla bla bla bla bla bla bla bla bla bla bla</p>
+        </div>
+        <div class="ronalde">
+          <%= image_tag "ronalde", class: "photo-dev" %>
+          <p class="dev-name">Ronalde Monezzi</p>
+          <p class="dev-desc">bla bla bla bla bla bla bla bla bla bla bla bla bla</p>
+        </div>
+      </div>
+
+    </div>
+
+  </section>
+
+
+
+
+  <section class="white-part apoio">
+
+    <div class="apoiadores">
+
+      <h1>APOIADORES</h1>
+
+      <div class="logo-group">
+        <%= image_tag "le-wagon", class: "logo-apoio" %>
+        <%= image_tag "logo", class: "logo-apoio" %>
+      </div>
+
+    </div>
+
+  </section>
 </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  <%# <%= image_tag "layout.png" %>
-  <%# <p>Seja bem-vindo ao [Nome do Projeto], o banco de dados definitivo para empresas e profissionais de Ruby on Rails no Brasil!
-    Aqui, você encontra tudo que precisa para impulsionar sua carreira ou encontrar a solução perfeita para seus projetos Rails.
-  </p> %>
-<%# <%= render "components/card" %>
-<%# <%= render "components/card-2" %>
