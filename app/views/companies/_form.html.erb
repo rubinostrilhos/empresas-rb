@@ -1,45 +1,52 @@
-<div class="company-form">
-  <div class="left-form-part">
-    <%= simple_form_for(@company) do |f| %>
-      <div class="form-inputs form-inputs-name">
-        <%= f.input :name, label:"Nome" %>
-      </div>
-      <div class="form-inputs form-site">
-        <%= f.input :site %>
-      </div>
-      <div class="form-inputs form-inputs-email">
-        <%= f.input :email %>
-      </div>
-      <div class="form-inputs form-inputs-telefone">
-        <%= f.input :phone, label:"Telefone" %>
-      </div>
-      <div class="form-inputs form-inputs-categoria">
-        <%= f.input :category, collection: Company::CATEGORIES, label:"Categoria" %>
-      </div>
-      <div class="form-inputs">
-        <%= f.input :segment, class: "form-inputs-segmento", collection: Company::SEGMENTS, label:"Segmento" %>
-      </div>
-      <div class="form-inputs form-inputs-uf">
-        <%= f.input :uf %>
-      </div>
-      <% if current_user.is_admin == true %>
-      <div class="form-inputs .group-input">
-        <%= f.label :status %>
-        <%= f.select :status, options_for_select([['Inativo', 'Inativo'], ['Ativo', 'Ativo'], ['Pendente', 'Pendente']], f.object.status), {}, { class: 'form-control' } %>
-      </div>
-      <% end %>
-      <div class="form-inputs">
-        <%= f.input :job_offer, label:"Contratando?" %>
-      </div>
+<%= simple_form_for(@company) do |f| %>
+  <div>
+    <%= f.input :name, label:"Nome" %>
   </div>
 
-    <div class="right-form-part">
-      <div class="form-inputs">
-        <%= f.input :color, input_html: { type: 'color', id: 'color-card-selected' }, label:"Identidade Visual (cor)" %>
-      </div>
-      <div class="form-actions btn btn-success btn-ruby">
-        <%= f.button :submit, "Enviar", class: "btn-ruby-font-color" %>
-      </div>
-        <% end %>
-    </div>
-</div>
+  <div>
+    <%= f.input :site %>
+  </div>
+
+  <div>
+    <%= f.input :email %>
+  </div>
+
+  <div>
+    <%= f.input :phone, label:"Telefone" %>
+  </div>
+
+  <div>
+    <%= f.input :uf %>
+  </div>
+
+  <div>
+    <%= f.input :category, collection: Company::CATEGORIES %>
+  </div>
+
+  <div>
+    <%= f.input :segment, collection: Company::SEGMENTS %>
+  </div>
+
+  <% if current_user.is_admin == true %>
+  <div class="form-inputs .group-input">
+    <%= f.label :status %>
+    <%= f.select :status, options_for_select([['Inativo', 'Inativo'], ['Ativo', 'Ativo'], ['Pendente', 'Pendente']], f.object.status), {}, { class: 'form-control' } %>
+  </div>
+  <% end %>
+
+  <div>
+    <%= f.input :job_offer %>
+  </div>
+
+  <div>
+    <%= f.input :ruby_stack %>
+  </div>
+
+  <div>
+    <%= f.input :color, input_html: { type: 'color', id: 'color-card-selected' } %>
+  </div>
+
+  <div class="form-actions btn btn-success">
+    <%= f.button :submit %>
+  </div>
+<% end %>

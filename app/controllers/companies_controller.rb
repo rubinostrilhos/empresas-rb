@@ -41,6 +41,7 @@ class CompaniesController < ApplicationController
 
   def update
     if current_user.is_admin? == true || (@company.user_id == current_user.id && @company.approval_status == false)
+      # Acresentar mensagem de erro caso os parametros não tenham sido fornecidos
       @company.update(company_params)
       redirect_to company_path(@company)
     else
