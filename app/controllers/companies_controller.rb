@@ -18,14 +18,12 @@ class CompaniesController < ApplicationController
   def create
     @company = Company.new(company_params)
     @company.user_id = current_user.id
-    if current_user.is_admin?
-      @company.update_attribute(:approval_status,
-                                true)
-    else
-      @company.update_attribute(:approval_status, false)
-    end
 
     if @company.save
+      admin = current_user.is_admin?
+
+      @company.update_attribute(:approval_status, admin)
+
       redirect_to @company,
                   notice: 'Companhia criada com sucesso, um administrador avaliará os dados antes da publicação.'
     else

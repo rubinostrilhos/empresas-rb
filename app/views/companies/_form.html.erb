@@ -1,52 +1,61 @@
 <%= simple_form_for(@company) do |f| %>
   <div>
-    <%= f.input :name, label:"Nome" %>
+    <%= f.input :name, label:"Nome", required: true %>
   </div>
 
   <div>
-    <%= f.input :site %>
+    <%= f.input :site, required: true %>
   </div>
 
   <div>
-    <%= f.input :email %>
+    <%= f.input :email, required: true %>
   </div>
 
   <div>
-    <%= f.input :phone, label:"Telefone", input_html: { type: 'number' } %>
+    <%= f.input :phone, label:"Telefone", input_html: { type: 'number' }, required: true %>
   </div>
 
   <div>
-    <%= f.input :uf %>
+    <%= f.input :uf, required: true %>
   </div>
 
   <div>
-    <%= f.input :category, collection: Company::CATEGORIES %>
+    <%= f.input :category, collection: Company::CATEGORIES, required: true %>
   </div>
 
   <div>
-    <%= f.input :segment, collection: Company::SEGMENTS %>
+    <%= f.input :segment, collection: Company::SEGMENTS, required: true %>
   </div>
 
   <% if current_user.is_admin == true %>
   <div class="form-inputs .group-input">
-    <%= f.label :status %>
-    <%= f.select :status, options_for_select([['Inativo', 'Inativo'], ['Ativo', 'Ativo'], ['Pendente', 'Pendente']], f.object.status), {}, { class: 'form-control' } %>
+    <%= f.label :status, required: true %>
+    <%= f.select :status, options_for_select(
+        [
+          ['Inativo', 'Inativo'],
+          ['Ativo', 'Ativo'],
+          ['Pendente', 'Pendente']
+        ], f.object.status
+      ),
+      {},
+      { class: 'form-control' }
+    %>
   </div>
   <% end %>
 
   <div>
-    <%= f.input :job_offer %>
+    <%= f.input :job_offer, required: true %>
   </div>
 
   <div>
-    <%= f.input :ruby_stack %>
+    <%= f.input :ruby_stack, required: true %>
   </div>
 
   <div>
-    <%= f.input :color, input_html: { type: 'color', id: 'color-card-selected' } %>
+    <%= f.input :color, input_html: { type: 'color', id: 'color-card-selected' }, required: true %>
   </div>
 
-  <div class="form-actions btn btn-success">
-    <%= f.button :submit %>
+  <div class="form-actions btn">
+    <%= f.button :submit, f.object.new_record? ? "Criar nova empresa" : "Atualizar empresa" %>
   </div>
 <% end %>
