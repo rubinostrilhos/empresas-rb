@@ -6,11 +6,11 @@
       <%= image_tag "logo.png" %>
     <% end %>
 
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <%# <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
-    </button>
+    </button> %>
 
-    <div class="collapse navbar-collapse " id="navbarSupportedContent">
+    <div  id="navbarSupportedContent">
       <ul class="navbar-nav me-auto">
         <% if user_signed_in? %>
 
@@ -38,16 +38,20 @@
             <%= image_tag "avatar.png", class: "avatar", alt: "dropdown menu" %>
           </a>
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+              <%= link_to "Home", "/", class: "dropdown-item dropdown-extra" %>
+              <%= link_to "Empresas", "/companies", class: "dropdown-item dropdown-extra" %>
               <%= link_to "Empresas favoritas", "/favorites", class: "dropdown-item" %>
-              <%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete}, class: "dropdown-item" %>
+              <%= link_to "Sair", destroy_user_session_path, data: {turbo_method: :delete}, class: "dropdown-item" %>
             </div>
           </li>
         <% else %>
-          <li class="nav-item">
-            <%= link_to "Login", new_user_session_path, class: "nav-link" %>
+          <li class="links-off">
+            <%= link_to "Registrar", new_user_registration_path, class: "link-nav" %>
+            <%= link_to "Entrar", new_user_session_path, class: "link-nav" %>
           </li>
         <% end %>
       </ul>
+
     </div>
   </div>
 </div>
