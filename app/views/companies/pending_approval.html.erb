@@ -1,11 +1,18 @@
-<h1>Empresas Pendentes de Aprovação</h1>
+<div class="pending">
+  <h1 class>Empresas Pendentes de Aprovação</h1>
 
-<ul>
-  <% @pending_companies.each do |company| %>
-    <li>
-      <%= company.name %> - <%= company.email %> (<%= company.segment %>)
-      <%= link_to "Aprovar", approve_company_path(company), data:{turbo_method: :patch, turbo_confirm:"Você tem certeza que deseja aprovar?"} %>
-      <%= link_to "Rejeitar", reject_company_path(company), data:{turbo_method: :delete, turbo_confirm:"Você tem certeza que deseja rejeitar?"} %>
-    </li>
-  <% end %>
-</ul>
+  <ul>
+    <% @pending_companies.each do |company| %>
+      <div class="colored-group">
+        <div class="colored-marker" ></div>
+        <li class='pending-group'>
+          <strong><%= company.name %></strong> - <div class="strongmail"><%= company.email %></div>  (<%= company.segment %>) -
+          <%= link_to "Aprovar", approve_company_path(company), data:{turbo_method: :patch, turbo_confirm:"Você tem certeza que deseja aprovar?"} %> |
+          <%= link_to "Rejeitar", reject_company_path(company), data:{turbo_method: :delete, turbo_confirm:"Você tem certeza que deseja rejeitar?"} %>
+        </li>
+      </div>
+    <% end %>
+  </ul>
+
+  <%= link_to "Voltar para a página inicial", root_path, class:"back_to" %>
+</div>

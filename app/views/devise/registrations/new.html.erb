@@ -1,43 +1,47 @@
-<div class="text-center"><h2>Inscrever-se</h2></div>
-
-<%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= f.error_notification %>
-
-  <div class="form-inputs">
-    <%= f.input :email,
-                label: "E-mail",
-                required: true,
-                autofocus: true,
-                input_html: { autocomplete: "email" }%>
-    <%= f.input :celular,
-                required: false,
-                autofocus: true,
-                input_html: { autocomplete: "celular" }%>
-    <%= f.input :stack,
-                required: false,
-                hint: "Back-end, Front-end, Full Stack...",
-                autofocus: true,
-                input_html: { autocomplete: "stack" }%>
-    <%= f.input :employed, as: :boolean,
-                label: "Empregado(a) na área?",
-                input_html: { autocomplete: "Empregado?" }  %>
-     <%= f.input :linkedin,
-                required: false,
-                autofocus: true,
-                input_html: { autocomplete: "LinkedIn" }%>
-    <%= f.input :password,
-                label: "Senha",
-                required: true,
-                hint: ("mínimo de #{@minimum_password_length} caracteres " if @minimum_password_length),
-                input_html: { autocomplete: "new-password" } %>
-    <%= f.input :password_confirmation,
-                label: "Confirme a Senha",
-                required: true,
-                input_html: { autocomplete: "new-password" } %>
+<div class="padder">
+  <div class="text-center top-spacer btn-spacer">
+    <h2>Inscrever-se</h2>
   </div>
 
-  <div class="form-actions">
-    <%= f.button :submit, "Inscrever-se" %>
-  </div>
-  <%= render "devise/shared/links" %>
-<% end %>
+  <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+    <%= f.error_notification %>
+
+    <div class="form-inputs">
+      <%= f.input :email,
+                  label: "E-mail",
+                  required: true,
+                  autofocus: true,
+                  input_html: { autocomplete: "email" }%>
+      <%= f.input :celular,
+                  required: false,
+                  autofocus: true,
+                  input_html: { autocomplete: "celular" }%>
+      <%= f.input :stack,
+                  required: false,
+                  hint: "Back-end, Front-end, Full Stack...",
+                  autofocus: true,
+                  input_html: { autocomplete: "stack" }%>
+      <%= f.input :employed, as: :boolean,
+                  label: "Empregado(a) na área?",
+                  input_html: { autocomplete: "Empregado?" }  %>
+       <%= f.input :linkedin,
+                  required: false,
+                  autofocus: true,
+                  input_html: { autocomplete: "LinkedIn" }%>
+      <%= f.input :password,
+                  label: "Senha",
+                  required: true,
+                  hint: ("mínimo de #{@minimum_password_length} caracteres " if @minimum_password_length),
+                  input_html: { autocomplete: "new-password" } %>
+      <%= f.input :password_confirmation,
+                  label: "Confirme a Senha",
+                  required: true,
+                  input_html: { autocomplete: "new-password" } %>
+    </div>
+
+    <div class="form-actions btn-adjust">
+      <%= f.button :submit, "Inscrever-se", class: "btn-fill" %>
+    </div>
+    <div class="btn-spacer"><%= render "devise/shared/links" %></div>
+  <% end %>
+</div>
