@@ -78,6 +78,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  width: 100%;
 
 }
 
@@ -173,6 +174,7 @@ h5 {
 
 .dev-name {
   color: #861422 !important;
+  display: contents;
   font-weight: bold;
   margin-top: 10px;
 }
@@ -202,7 +204,7 @@ h5 {
 }
 
 
-@media (max-width: 863px) {
+@media (max-width: 952px) {
 
   .gray-part h1, .gray-part .h1 {
     color: #861422;
@@ -218,6 +220,25 @@ h5 {
     margin-bottom: 151px;
     margin-top: 20px;
   }
+
+  .landing-card-shadow {
+    width: 300px;
+    height: 300px;
+    background-color: #f4f4f4;
+    position: absolute;
+    z-index: -1;
+    margin-top: 56px;
+    margin-left: -380px;
+}
+
+.img-card {
+  display: flex;
+  width: 640px;
+  height: 360px;
+  align-items: center;
+  gap: 40px;
+  text-align: justify;
+}
 
 }
 
@@ -295,6 +316,7 @@ h5 {
     justify-content: center;
     align-items: center;
     padding-bottom: 50px;
+    width: 100%;
 }
 
 
@@ -437,9 +459,9 @@ h5 {
     right: 277px;
     font-size: 29px;
     margin-bottom: 10px;
-    margin-top: 744px;
+    margin-top: -195px;
     text-align: center;
-  }
+}
 
   .img-card {
 
@@ -453,8 +475,7 @@ h5 {
     object-fit: cover;
     -o-object-position: right;
     object-position: right;
-    margin-top: -222px;
-    // margin-bottom: 157px;
+    margin-top: -181px;
 }
 
   .landing-card-shadow {
@@ -463,7 +484,7 @@ h5 {
     background-color: #f4f4f4;
     position: absolute;
     z-index: -1;
-    margin-top: -598px;
+    margin-top: -521px;
     margin-left: -25px;
   }
 
@@ -478,8 +499,8 @@ h5 {
   }
 
   .desc-dev {
-    width: 313px;
-    text-align: justify;
+    width: 276px;
+    text-align: center;
     margin-bottom: 0px;
   }
 
@@ -496,10 +517,14 @@ h5 {
     align-items: center;
 
   }
-  .dev-part-img {
-    // margin-bottom: 498px;
-    margin-top: -498px;
-  }
+  .gray-part-img {
+    width: 297px;
+    height: 204px;
+    margin-top: -95px;
+    display: flex;
+    flex-direction: column;
+    margin-top: -255px;
+}
 
   .display-flex {
     height: 546px;
@@ -511,14 +536,23 @@ h5 {
 
   }
 
-  .apoiadores {
-    margin-bottom: 1167px;
-  }
-
   .logo-group {
     display: flex;
     flex-direction: column;
     gap: 130px;
   }
+
+  .dev-part-img {
+    margin-top: -587px;
+  }
+
+  .gray-part p {
+    width: 287px;
+
+}
+
+.gray-part h1, .gray-part .h1 {
+  margin-top: 32px;
+}
 
 }
