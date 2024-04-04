@@ -2,7 +2,7 @@
   <div class="container container-edit">
     <h1 class="edit-title">Editar <%= @company.name %></h1>
     <%= render 'form', company: @company %>
-    <p><%= link_to "Back to company", @company  %></p>
+    <p><%= link_to "Voltar para a empresa", @company  %></p>
   </div>
 <% else %>
   <h1>Você não tem permissão para editar empresas</h1>
