@@ -15,6 +15,40 @@
   align-items: flex-end;
 }
 
+.btn-adjust {
+  background-color: #861422 !important;
+  border-radius: 6px;
+  display: contents;
+  padding: 10px;
+}
+
+.btn-adjust:hover {
+  background-color: #690f1a !important;
+
+}
+
+.btn-adjust:active {
+  background-color: #861422 !important;
+}
+
+.btn-fill {
+  background-color: #861422 !important;
+  border-radius: 6px;
+}
+
+.btn-fill:hover {
+  background-color: #690f1a !important;
+
+}
+
+.btn-fill:active {
+  background-color: #861422 !important;
+}
+
+.btn-spacer {
+  margin-bottom: 50px;
+}
+
 .btn-ruby {
   background-color: #861422;
   width: 120px;
@@ -60,4 +94,13 @@
 
 .select {
   display: flex;
+  flex-direction: column;
+}
+
+.top-spacer {
+  margin-top: 100px;
+}
+
+.padder {
+  padding: 0 40px;
 }

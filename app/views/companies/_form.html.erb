@@ -55,7 +55,7 @@
     <%= f.input :color, input_html: { type: 'color', id: 'color-card-selected', value: '#ffc600' }, required: true %>
   </div>
 
-  <div class="form-actions btn">
-    <%= f.button :submit, f.object.new_record? ? "Criar nova empresa" : "Atualizar empresa" %>
+  <div class="form-actions btn-adjust">
+    <%= f.button :submit, f.object.new_record? ? "Criar nova empresa" : "Atualizar empresa", class: 'btn-fill' %>
   </div>
 <% end %>
