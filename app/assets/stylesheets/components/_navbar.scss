@@ -126,12 +126,20 @@
 
 
   .navbar-expand-sm .navbar-nav .dropdown-menu {
-    top: -53px;
-    right: -52px;
+    top: 62px;
+    right: -49px;
   }
 
-  .dropdown-menu, dropdown-menu-end, show {
-    width: 100vw !important;
-    height: 100vh;
+  .navbar-expand-sm .navbar-nav .dropdown-menu::before {
+    top: -17px;
+    left: 74px;
+    transform: rotate(91deg);
   }
+
+
+  top: -17px;
+  left: 74px
+px
+;
+  transform: rotate(91deg);
  }
