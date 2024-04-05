@@ -44,7 +44,7 @@
             <i class="fa-solid fa-star fa-2x" style="color: rgb(250, 200, 0);" title="Clique para remover dos favoritos"></i>
           <% end %>
         <% else %>
-          <p><%= button_to company_favorites_path(@company), class: 'btn', style: 'background: none; border: none;' do %></p>
+          <p><%= button_to company_favorites_path(@company), class: 'btn-star', style: 'background: none; border: none;' do %></p>
             <i class="fa-regular fa-star fa-2x" style="color: rgb(0, 0, 0);" title="Clique para adicionar aos favoritos"></i>
           <% end %>
         <% end %>

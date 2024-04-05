@@ -172,12 +172,12 @@ fieldset {
   margin-top: 30px !important;
 }
 
-[type="submit"]:not(:disabled) {
-  background-color: #861422 !important;
-  cursor: pointer;
-  color: white;
-  font-weight: bold;
-}
+// [type="submit"]:not(:disabled) {
+//   background-color: #861422 !important;
+//   cursor: pointer;
+//   color: white;
+//   font-weight: bold;
+// }
 
 .btn:first-child:active, .btn.active, .btn.show {
   color: $white;
@@ -185,7 +185,9 @@ fieldset {
   border-color: transparent !important;
 }
 
-
+.btn-star {
+  background-color: transparent !important;
+}
 
 
 
