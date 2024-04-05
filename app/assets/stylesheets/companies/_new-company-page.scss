@@ -78,19 +78,19 @@
   font-weight: bold;
 }
 
-[type="submit"]:not(:disabled):hover {
-  background-color: #690f1a
-}
+// [type="submit"]:not(:disabled):hover {
+//   background-color: #690f1a
+// }
 
-[type="submit"]:not(:disabled):active {
-  background-color: #690f1a
-}
+// [type="submit"]:not(:disabled):active {
+//   background-color: #690f1a
+// }
 
-.btn, :not(.btn-check) + .btn:active {
-  color: $white;
-  background-color: #690f1a;
-  border-color: none;
-}
+// .btn, :not(.btn-check) + .btn:active {
+//   color: $white;
+//   background-color: #690f1a;
+//   border-color: none;
+// }
 
 .select {
   display: flex;
