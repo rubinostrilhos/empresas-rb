@@ -2,5 +2,6 @@
 import "@hotwired/turbo-rails"
 import "controllers"
 import "controllers/typing_effect"
+import "controllers/seta"
 import "@popperjs/core"
 import "bootstrap"

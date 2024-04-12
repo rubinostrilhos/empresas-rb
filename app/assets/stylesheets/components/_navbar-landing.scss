@@ -51,6 +51,22 @@
   100% {opacity: 1;}
 }
 
+#seta {
+  animation: quicar .6s infinite;
+  cursor: pointer;
+  color: white;
+  font-size: 30px;
+  position: absolute;
+  top: 56%;
+  left: 26%;
+}
+
+@keyframes quicar {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+  100% { transform: translateY(0); }
+}
+
 @media (max-width: 1440px) {
   #texto {
     font-size: 45px;
@@ -116,6 +132,27 @@
   #texto {
     font-size: 16px;
   }
+}
+
+@media (max-width: 460px) {
+  #texto {
+    top: 21%;
+    left: 39%;
+    font-size: 20px;
+    width: 182px;
+    text-align: center;
+    font-size: 25px;
+  }
+  #seta {
+    animation: quicar .6s infinite;
+    cursor: pointer;
+    color: white;
+    font-size: 18px;
+    position: absolute;
+    top: 35%;
+    left: 59%;
+  }
+
 }
 
 @media (max-width: 377px) {
