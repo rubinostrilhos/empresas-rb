@@ -21,7 +21,7 @@ setScrollAmount();
 
 // Atualize a quantidade de rolagem quando a orientação do dispositivo muda
 var mql = window.matchMedia('(orientation: portrait)');
-mql.addListener(function(m) {
+mql.addEventListener('change', function() {
   setScrollAmount();
 });
 

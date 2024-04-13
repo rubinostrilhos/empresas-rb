@@ -20,13 +20,13 @@
 
 .link-nav-landing-register {
   color: #FFF;
-  font-size: 22px;
+  font-size: 21.34px;
   font-weight: bold;
 }
 
 .link-nav-landing-sign-in {
   color: #FFF;
-  font-size: 22px;
+  font-size: 21.34px;
   font-weight: bold;
 }
 
@@ -43,6 +43,10 @@
 #texto:after {
   content: '|';
   animation: blink 1s infinite;
+}
+
+.rubista {
+  color: red;
 }
 
 @keyframes blink {
@@ -131,6 +135,7 @@
 @media (max-width: 483px) {
   #texto {
     font-size: 16px;
+    width: 199px;
   }
 }
 
@@ -139,7 +144,7 @@
     top: 21%;
     left: 39%;
     font-size: 20px;
-    width: 182px;
+    width: 199px;
     text-align: center;
     font-size: 25px;
   }

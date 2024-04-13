@@ -1,18 +1,20 @@
 let i = 0;
-let frase = "Conectando Rubistas";
-let palavras = ["Rubistas", "Empresas", "a comunidade"];
+let palavras = [" Rubistas", " Empresas", "\na Comunidade"];
+let cores = ["red", "#00b8fb", "yellow"];
 let contadorPalavras = 0;
 let estaApagando = false;
 let tempoEntrePalavras = [2000, 2000, 4000]; // tempo de espera em milissegundos
 
 function efeitoMaquinaDeEscrever() {
-  if (estaApagando && i <= 11) { // 11 é o índice após "Conectando "
+  let palavraAtual = palavras[contadorPalavras];
+  let corAtual = cores[contadorPalavras];
+
+  if (estaApagando && i <= 0) {
     estaApagando = false;
     contadorPalavras = (contadorPalavras + 1) % palavras.length;
-    frase = "Conectando " + palavras[contadorPalavras];
   }
 
-  if (!estaApagando && i == frase.length) {
+  if (!estaApagando && i == palavraAtual.length) {
     estaApagando = true;
     setTimeout(efeitoMaquinaDeEscrever, tempoEntrePalavras[contadorPalavras]);
     return;
@@ -24,7 +26,7 @@ function efeitoMaquinaDeEscrever() {
     i++;
   }
 
-  document.getElementById("texto").textContent = frase.slice(0, i);
+  document.getElementById("texto").innerHTML = "Conectando<span style='color:" + corAtual + ";'>"+ "<br/>" + palavraAtual.slice(0, i) + "</span>";
   setTimeout(efeitoMaquinaDeEscrever, estaApagando ? 150 : 100);
 }
 
