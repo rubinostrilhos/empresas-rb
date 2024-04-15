@@ -26,8 +26,14 @@ function efeitoMaquinaDeEscrever() {
     i++;
   }
 
-  document.getElementById("texto").innerHTML = "Conectando<span style='color:" + corAtual + ";'>"+ "<br/>" + palavraAtual.slice(0, i) + "</span>";
-  setTimeout(efeitoMaquinaDeEscrever, estaApagando ? 150 : 100);
+  if (window.innerWidth <= 486) {
+    document.getElementById("texto").innerHTML = "Conectando<span style='color:" + corAtual + ";'>" + "<br/>" + palavraAtual.slice(0, i) + "</span>";
+    setTimeout(efeitoMaquinaDeEscrever, estaApagando ? 150 : 100);
+  } else {
+    document.getElementById("texto").innerHTML = "Conectando<span style='color:" + corAtual + ";'>" + palavraAtual.slice(0, i) + "</span>";
+    setTimeout(efeitoMaquinaDeEscrever, estaApagando ? 150 : 100);
+  }
+
 }
 
 efeitoMaquinaDeEscrever();
