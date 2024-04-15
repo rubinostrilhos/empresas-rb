@@ -16,10 +16,10 @@
      </div>
 
 
-     <div class="box-texto">
-       <p id="texto"></p>
+     <div class="box-texto" data-controller="typing">
+       <p id="texto" data-typing-target="texto"></p>
      </div>
 
-    <%= link_to "&#x25BC;".html_safe, '#', id: "seta", style: "cursor: pointer;" %>
+    <%= link_to "&#x25BC;".html_safe, '#', id: "seta", style: "cursor: pointer;", data: { controller: "seta"} %>
 
 </div>
