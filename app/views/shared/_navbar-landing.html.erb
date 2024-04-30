@@ -1,0 +1,25 @@
+<div class="navbar-landing-container">
+
+   <%# <%= image_tag("banner1.png", alt: "", class: "navbar-landing") %>
+
+     <picture>
+      <!-- Imagem para resoluções maiores -->
+      <source srcset="<%= asset_path('banner1.png') %>" media="(min-width: 460px)">
+      <!-- Imagem para resoluções menores -->
+      <%= image_tag 'banner_cel_2.jpg', class: 'navbar-landing' %>
+     </picture>
+
+
+     <div class="links-landing">
+       <%= link_to "Registrar", new_user_registration_path, class: "link-nav-landing-register" %>
+       <%= link_to "Entrar", new_user_session_path, class: "link-nav-landing-sign-in" %>
+     </div>
+
+
+     <div class="box-texto" data-controller="typing">
+       <p id="texto" data-typing-target="texto"></p>
+     </div>
+
+    <%= link_to "&#x25BC;".html_safe, '#', id: "seta", style: "cursor: pointer;", data: { controller: "seta"} %>
+
+</div>

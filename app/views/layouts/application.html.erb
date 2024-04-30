@@ -13,7 +13,19 @@
 
   <body>
 
-    <%= render "shared/navbar" %>
+    <% if current_user %>
+
+      <%= render "shared/navbar" %>
+
+    <% elsif !current_user && current_page?(root_path)  %>
+
+      <%= render "shared/navbar-landing" %>
+
+    <% else%>
+
+      <%= render "shared/navbar" %>
+
+    <%end%>
 
     <%= render "shared/flashes" %>
 

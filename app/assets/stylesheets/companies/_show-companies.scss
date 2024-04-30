@@ -1,5 +1,5 @@
 h1 {
-  font-size: 29.52px;
+  font-size: 2em;
   margin-top: 89px;
   font-weight: bold;
 }
@@ -250,7 +250,15 @@ h1 {
     display: none;
   }
 
-  .submit-group {
+  .submit-group {#texto {
+    color: white;
+    position: absolute;
+    z-index: 99999;
+    top: 256px;
+    left: 186px;
+    font-size: 55px;
+    font-weight: bold;
+  }
     order: 0;
     justify-content: space-between;
   }

@@ -49,9 +49,6 @@ export default class extends Controller {
 
     this.addTarget.classList.remove('add-company')
     this.addTarget.classList.add('add-position')
-
-
-
   }
 
   fecharModal() {
