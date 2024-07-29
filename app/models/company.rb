@@ -14,10 +14,10 @@ class Company < ApplicationRecord
   validates :status, inclusion: { in: %w[Ativo Inativo Pendente] }
   # validates :approval_status, inclusion: { in: [true, false] }reloa
 
-  include PgSearch::Model
-  pg_search_scope :search_by_name_and_email,
-                  against: %i[name email],
-                  using: {
-                    tsearch: { prefix: true }
-                  }
+  # include PgSearch::Model
+  # pg_search_scope :search_by_name_and_email,
+  #                 against: %i[name email],
+  #                 using: {
+  #                   tsearch: { prefix: true }
+  #                 }
 end
