@@ -3,6 +3,8 @@ class Company < ApplicationRecord
   SEGMENTS = %w[Agro IT Finance Transport Marketing Food Tourism Healthcare Education
                 Recruitment Fashion Media Fitness Service Retail Construction].sort
 
+  scope :search_by_name_and_email, ->(query) { where('lower(name) LIKE ? OR lower(email) LIKE ?', "%#{query.downcase}%", "%#{query.downcase}%") }
+
   has_many :favorites, dependent: :destroy
   has_many :users, through: :favorites
   has_many :votes, dependent: :destroy
@@ -13,11 +15,4 @@ class Company < ApplicationRecord
   # validações para definir status de aprovação do cadastro da empresa por adm.
   validates :status, inclusion: { in: %w[Ativo Inativo Pendente] }
   # validates :approval_status, inclusion: { in: [true, false] }reloa
-
-  # include PgSearch::Model
-  # pg_search_scope :search_by_name_and_email,
-  #                 against: %i[name email],
-  #                 using: {
-  #                   tsearch: { prefix: true }
-  #                 }
 end

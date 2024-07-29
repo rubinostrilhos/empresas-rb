@@ -7,11 +7,11 @@
 #   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
-puts "Cleaning database..."
-Company.destroy_all
-sleep 1
+# puts "Cleaning database..."
+# Company.destroy_all
+# sleep 1
 
-Company.create(name: "zezinho", email: "sdfsdf@gmail.com")
-Company.create(name: "zezinho2", email: "sdfsdf@gmail.com2")
+# Company.create(name: "zezinho", email: "sdfsdf@gmail.com")
+# Company.create(name: "zezinho2", email: "sdfsdf@gmail.com2")
 
-puts "Criado com sucesso"
+# puts "Criado com sucesso"
