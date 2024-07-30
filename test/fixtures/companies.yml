@@ -1,0 +1,18 @@
+company_approved:
+  name: Company Approved
+  approval_status: true
+  status: Ativo
+
+company_two_approved:
+  name: Company Two Approved
+  approval_status: true
+  status: Pendente
+
+company_approved_but_inactive:
+  name: Company Inactive
+  approval_status: true
+  status: Inativo
+
+company_not_approved:
+  name: Company Not Approved
+  approval_status: false
