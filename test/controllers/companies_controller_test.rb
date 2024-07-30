@@ -1,38 +1,27 @@
 require "test_helper"
 
 class CompaniesControllerTest < ActionDispatch::IntegrationTest
-  test "should get index" do
-    get companies_index_url
-    assert_response :success
+  include Devise::Test::IntegrationHelpers
+
+  test "Should redirect to login if user is not logged in" do
+    get companies_path
+    assert_redirected_to new_user_session_path
   end
 
-  test "should get show" do
-    get companies_show_url
+  test 'Should list a list of approved companies' do
+    user = users(:user)
+    sign_in user
+    get companies_path
     assert_response :success
+    assert_select 'h1', 'EMPRESAS'
+    assert_select '.companies-total', "Total de empresas: #{Company.visible.count}"
   end
 
-  test "should get new" do
-    get companies_new_url
+  test 'Should filter companies with query' do
+    user = users(:user)
+    sign_in user
+    get companies_path, params: { query: 'Two' }
     assert_response :success
-  end
-
-  test "should get create" do
-    get companies_create_url
-    assert_response :success
-  end
-
-  test "should get edit" do
-    get companies_edit_url
-    assert_response :success
-  end
-
-  test "should get update" do
-    get companies_update_url
-    assert_response :success
-  end
-
-  test "should get destroy" do
-    get companies_destroy_url
-    assert_response :success
+    assert_select '.companies-total', "Total de empresas: 1"
   end
 end

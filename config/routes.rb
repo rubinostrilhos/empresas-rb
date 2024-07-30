@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   # rota para index das empresas sem aprovação
   get 'companies/pending_approval', to: 'companies#pending_approval', as: 'pending_approval_companies'
+
   resources :companies do
     resources :favorites, only: %i[create destroy]
     member do

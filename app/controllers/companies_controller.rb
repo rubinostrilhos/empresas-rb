@@ -103,7 +103,7 @@ class CompaniesController < ApplicationController
   private
 
   def filtered_companies
-    companies = Company.where(approval_status: true, status: ['Ativo', 'Pendente'])
+    companies = Company.visible
 
     companies = companies.search_by_name_and_email(params[:query]) if params[:query].present?
 
