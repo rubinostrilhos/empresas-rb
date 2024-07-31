@@ -8,20 +8,20 @@ class CompaniesControllerTest < ActionDispatch::IntegrationTest
     assert_redirected_to new_user_session_path
   end
 
-  test 'Should list a list of approved companies' do
+  test "Should list a list of approved companies" do
     user = users(:user)
     sign_in user
     get companies_path
     assert_response :success
-    assert_select 'h1', 'EMPRESAS'
-    assert_select '.companies-total', "Total de empresas: #{Company.visible.count}"
+    assert_select "h1", "EMPRESAS"
+    assert_select ".companies-total", "Total de empresas: #{Company.visible.count}"
   end
 
-  test 'Should filter companies with query' do
+  test "Should filter companies with query" do
     user = users(:user)
     sign_in user
-    get companies_path, params: { query: 'Two' }
+    get companies_path, params: { query: "Two" }
     assert_response :success
-    assert_select '.companies-total', "Total de empresas: 1"
+    assert_select ".companies-total", "Total de empresas: 1"
   end
 end

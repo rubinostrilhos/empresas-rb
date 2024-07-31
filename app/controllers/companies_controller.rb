@@ -3,7 +3,7 @@ class CompaniesController < ApplicationController
   before_action :authenticate_user!
 
   def index
-    @page_name = 'Empresas'
+    @page_name = "Empresas"
     @companies = filtered_companies
   end
 
@@ -25,7 +25,7 @@ class CompaniesController < ApplicationController
       @company.update_attribute(:approval_status, admin)
 
       redirect_to @company,
-                  notice: 'Companhia criada com sucesso, um administrador avaliará os dados antes da publicação.'
+                  notice: "Companhia criada com sucesso, um administrador avaliará os dados antes da publicação."
     else
       render :new, status: :unprocessable_entity
     end
@@ -33,7 +33,7 @@ class CompaniesController < ApplicationController
 
   def edit
     unless current_user.is_admin? == true || (@company.user_id == current_user.id && @company.approval_status == false)
-      redirect_to company_path(@company), notice: 'Você não tem permissão para editar esta empresa.'
+      redirect_to company_path(@company), notice: "Você não tem permissão para editar esta empresa."
     end
   end
 
@@ -43,7 +43,7 @@ class CompaniesController < ApplicationController
       @company.update(company_params)
       redirect_to company_path(@company)
     else
-      redirect_to company_path(@company), notice: 'Você não tem permissão para editar esta empresa.'
+      redirect_to company_path(@company), notice: "Você não tem permissão para editar esta empresa."
     end
   end
 
@@ -52,7 +52,7 @@ class CompaniesController < ApplicationController
       @company.destroy
       redirect_to companies_path, status: :see_other
     else
-      redirect_to company_path(@company), notice: 'Você não tem permissão para deletar esta empresa.'
+      redirect_to company_path(@company), notice: "Você não tem permissão para deletar esta empresa."
     end
   end
 
@@ -62,25 +62,25 @@ class CompaniesController < ApplicationController
       @pending_companies = Company.where(approval_status: false)
     else
       redirect_to(companies_path,
-                  notice: 'Você não tem permissão para acessar esta página.')
+                  notice: "Você não tem permissão para acessar esta página.")
     end
   end
 
   def approve
     if current_user.is_admin? == true
       @company.update!(approval_status: true)
-      redirect_to pending_approval_companies_path, notice: 'Empresa aprovada com sucesso.'
+      redirect_to pending_approval_companies_path, notice: "Empresa aprovada com sucesso."
     else
-      redirect_to companies_path, notice: 'Você não tem permissão para aprovar esta empresa.'
+      redirect_to companies_path, notice: "Você não tem permissão para aprovar esta empresa."
     end
   end
 
   def reject
     if current_user.is_admin? == true
       @company.destroy
-      redirect_to pending_approval_companies_path, notice: 'Empresa rejeitada com sucesso.'
+      redirect_to pending_approval_companies_path, notice: "Empresa rejeitada com sucesso."
     else
-      redirect_to companies_path, notice: 'Você não tem permissão para rejeitar esta empresa.'
+      redirect_to companies_path, notice: "Você não tem permissão para rejeitar esta empresa."
     end
   end
 
