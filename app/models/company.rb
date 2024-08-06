@@ -6,13 +6,7 @@ class Company < ApplicationRecord
   VISIBLE_STATUSES = %w[Ativo Pendente].freeze
 
   scope :search_by_name_and_email, ->(query) { where('lower(name) LIKE ? OR lower(email) LIKE ?', "%#{query.downcase}%", "%#{query.downcase}%") }
-  scope :approved, -> { where(approval_status: true) }
-  scope :with_visible_status, -> { where(status: VISIBLE_STATUSES) }
-  scope :visible, -> { approved.with_visible_status }
-
-  has_many :favorites, dependent: :destroy
-  has_many :users, through: :favorites
-  has_many :votes, dependent: :destroy
+  scope :visible, -> { all }
 
   validates :name, :phone, :segment,
             :status, :site, :category, :uf, presence: true

@@ -4,7 +4,9 @@
   <head>
     <title>Tropicalrb</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
     <%= javascript_importmap_tags %>
+
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -13,22 +15,8 @@
 
   <body>
 
-    <% if current_user %>
-
-      <%= render "shared/navbar" %>
-
-    <% elsif !current_user && current_page?(root_path)  %>
-
-      <%= render "shared/navbar-landing" %>
-
-    <% else%>
-
-      <%= render "shared/navbar" %>
-
-    <%end%>
-
+    <%= render "shared/navbar" %>
     <%= render "shared/flashes" %>
-
 
     <%= yield %>
   </body>

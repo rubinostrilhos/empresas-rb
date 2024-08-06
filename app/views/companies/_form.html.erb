@@ -27,22 +27,6 @@
     <%= f.input :segment, collection: Company::SEGMENTS, label:"Segmento", required: true %>
   </div>
 
-  <% if current_user.is_admin == true %>
-  <div class="form-inputs .group-input">
-    <%= f.label :status, required: true %>
-    <%= f.select :status, options_for_select(
-        [
-          ['Inativo', 'Inativo'],
-          ['Ativo', 'Ativo'],
-          ['Pendente', 'Pendente']
-        ], f.object.status
-      ),
-      {},
-      { class: 'form-control' }
-    %>
-  </div>
-  <% end %>
-
   <div>
     <%= f.input :job_offer, label: "Oferta de Vaga", required: true %>
   </div>

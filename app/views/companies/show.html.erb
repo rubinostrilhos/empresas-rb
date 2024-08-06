@@ -37,85 +37,17 @@
           <div class="info-icon"><i class="fa-solid fa-map-location-dot" style="color: #861422;"title="Estado da Empresa"></i></i></div>
           <div class="info-value"><span title="Estado da Empresa"><%= @company.uf %></div>
         </div>
-
-        <% if user_signed_in? && current_user.is_admin? == false %>
-        <% if @favorite %>
-          <p><%= button_to company_favorite_path(@company, @favorite), method: :delete, class: 'btn', style: 'background: none; border: none;' do %></p>
-            <i class="fa-solid fa-star fa-2x" style="color: rgb(250, 200, 0);" title="Clique para remover dos favoritos"></i>
-          <% end %>
-        <% else %>
-          <p><%= button_to company_favorites_path(@company), class: 'btn-star', style: 'background: none; border: none;' do %></p>
-            <i class="fa-regular fa-star fa-2x" style="color: rgb(0, 0, 0);" title="Clique para adicionar aos favoritos"></i>
-          <% end %>
-        <% end %>
-      <% end %>
-
-      <%# Botões de upvote e downvote %>
-      <% if user_signed_in? && current_user.is_admin? == false %>
-      <p><strong><%="Essa informação está atualizada?"%></strong></p>
-      <div class='d-flex flex-row justify-content-center'>
-        <%= button_to vote_toggle_company_path(@company.id, usefulness: 'up'), class: 'btn', style: 'background: none; border: none;' do %>
-          <% if @company.votes.find_by(user_id: current_user.id, usefulness: 'up')  %>
-            <i class="fa-solid fa-thumbs-up fa-2xl" style="color: #861422;" title="Está atualizada"></i>
-          <% else %>
-            <i class="fa-regular fa-thumbs-up fa-2xl" style="color: #861422;" title="Está atualizada"></i>
-          <% end %>
-        <% end %>
-        <%= button_to vote_toggle_company_path(@company.id, usefulness: 'down'), class: 'btn', style: 'background: none; border: none;' do %>
-          <% if @company.votes.find_by(user_id: current_user.id, usefulness: 'down')  %>
-            <i class="fa-solid fa-thumbs-down fa-2xl" style="color: #861422;" title="Não está atualizada"></i>
-          <% else %>
-            <i class="fa-regular fa-thumbs-down fa-2xl" style="color: #861422;" title="Não está atualizada"></i>
-            <% end %>
-          <% end %>
-        <% end %>
       </div>
       </div>
     </div>
   </div>
-    <div class="d-flex justify-content-center align-items-center mt-3 fs-3"><%= link_to companies_path do %>
-      <i class="fa-solid fa-circle-chevron-left" style="color: #333333;"></i>
+    <div class="d-flex justify-content-center align-items-center mt-3 fs-3">
+      <%= link_to companies_path do %>
+        <i class="fa-solid fa-circle-chevron-left" style="color: #333333;"></i>
       <% end %>
-    </div>
-  </div>
-
-  <% if current_user.is_admin? %>
-    <div class="container d-flex justify-content-center align-items-center text-center mt-4">
-      <div class="card_show">
-        <div class="header">Painel do Administrador</div>
-        <div class="body">
-          <div class="info">
-            <div class="info-icon">Vaga?</i></div>
-            <div class="info-value"><span title="Empresa tem vaga?"><%= @company.job_offer %></div>
-          </div>
-
-          <div class="divider"></div>
-          <div class="info">
-            <div class="info-icon">Ruby?</i></div>
-            <div class="info-value"><span title="Empresa trabalha com Ruby?"><%= @company.ruby_stack %></div>
-          </div>
-
-          <div class="divider"></div>
-          <div class="info">
-            <div class="info-icon">Status</i></div>
-            <div class="info-value"><span title="Status da Empresa"><%= @company.status %></div>
-          </div>
-        </div>
-      </div>
-    </div>
-  <% end %>
-
-  <div class="d-flex justify-content-center align-items-center mt-3 fs-4">
-    <% if current_user.is_admin? %>
-        <%= link_to company_path(@company),
-        data:{turbo_method: :delete, turbo_confirm:"Você tem certeza que deseja apagar?"} do %>
-          <i class="fa-solid fa-trash" style="color: #861422;"></i>
-        <% end %>
-      <% end %>
-
-    <% if current_user.is_admin? || (current_user.id == @company.user_id && @company.approval_status == false) %>
-        <%= link_to edit_company_path(@company) do %>
+      <%= link_to edit_company_path(@company) do %>
         <i class="fa-solid fa-pen" style="color: #333333; margin-left: 40px;"></i>
-        <% end  %>
-    <% end %>
+      <% end  %>
+    </div>
   </div>
+
