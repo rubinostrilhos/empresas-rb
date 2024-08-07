@@ -2,7 +2,7 @@ class CompaniesController < ApplicationController
   before_action :find_company, only: %i[show edit update destroy]
 
   def index
-    @page_name = 'Empresas'
+    @page_name = "Empresas"
     @companies = filtered_companies
   end
 
@@ -17,7 +17,7 @@ class CompaniesController < ApplicationController
     @company = Company.new(company_params)
     if @company.save
       redirect_to @company,
-                  notice: 'Companhia criada com sucesso, um administrador avaliará os dados antes da publicação.'
+                  notice: "Companhia criada com sucesso, um administrador avaliará os dados antes da publicação."
     else
       render :new, status: :unprocessable_entity
     end

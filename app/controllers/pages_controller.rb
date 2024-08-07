@@ -1,5 +1,5 @@
 class PagesController < ApplicationController
   def home
-    @page_name = 'Home'
+    @page_name = "Home"
   end
 end

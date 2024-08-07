@@ -5,7 +5,7 @@ class Company < ApplicationRecord
 
   VISIBLE_STATUSES = %w[Ativo Pendente].freeze
 
-  scope :search_by_name_and_email, ->(query) { where('lower(name) LIKE ? OR lower(email) LIKE ?', "%#{query.downcase}%", "%#{query.downcase}%") }
+  scope :search_by_name_and_email, ->(query) { where("lower(name) LIKE ? OR lower(email) LIKE ?", "%#{query.downcase}%", "%#{query.downcase}%") }
   scope :visible, -> { all }
 
   validates :name, :phone, :segment,
