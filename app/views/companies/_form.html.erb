@@ -12,11 +12,7 @@
   </div>
 
   <div>
-    <%= f.input :phone, label:"Telefone", input_html: { type: 'number' }, required: true %>
-  </div>
-
-  <div>
-    <%= f.input :uf, required: true %>
+    <%= f.input :uf, collection: Company::LOCALES, required: true %>
   </div>
 
   <div>
@@ -28,11 +24,11 @@
   </div>
 
   <div>
-    <%= f.input :job_offer, label: "Oferta de Vaga", required: true %>
+    <%= f.input :size, collection: Company::SIZE, label:"Tamanho", required: true %>
   </div>
 
   <div>
-    <%= f.input :ruby_stack, required: true %>
+    <%= f.input :job_offer, label: "Oferta de Vaga" %>
   </div>
 
   <div>

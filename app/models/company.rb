@@ -3,15 +3,13 @@ class Company < ApplicationRecord
   SEGMENTS = %w[Agro IT Finance Transport Marketing Food Tourism Healthcare Education
                 Recruitment Fashion Media Fitness Service Retail Construction].sort
 
-  VISIBLE_STATUSES = %w[Ativo Pendente].freeze
+  SIZE = %w[1-10 11-100 101-500 501-1000 1000+]
+
+  LOCALES = %w[REMOTO AC AL AP AM BA CE DF ES GO MA MT MS MG PA PB PR PE PI RJ RN RS RO RR SC SP SE TO]
 
   scope :search_by_name_and_email, ->(query) { where("lower(name) LIKE ? OR lower(email) LIKE ?", "%#{query.downcase}%", "%#{query.downcase}%") }
   scope :visible, -> { all }
 
-  validates :name, :phone, :segment,
-            :status, :site, :category, :uf, presence: true
+  validates :name, :site, :uf, :category, :segment, :size, :color, presence: true
   validates :email, presence: true, format: { with: /\A[\w+\-.]+@[a-z\d\-]+(\.[a-z\d\-]+)*\.[a-z]+\z/i }
-  # validações para definir status de aprovação do cadastro da empresa por adm.
-  validates :status, inclusion: { in: %w[Inativo] | VISIBLE_STATUSES }
-  # validates :approval_status, inclusion: { in: [true, false] }reloa
 end

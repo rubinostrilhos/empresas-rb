@@ -10,24 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.2].define(version: 2024_08_06_104133) do
+ActiveRecord::Schema[7.2].define(version: 2024_08_13_104732) do
   create_table "companies", force: :cascade do |t|
     t.string "name"
-    t.string "email"
-    t.string "contact_email"
-    t.string "phone"
-    t.string "address"
     t.string "segment"
     t.string "size"
     t.boolean "job_offer", default: false
-    t.boolean "ruby_stack", default: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "status", default: "Ativo"
     t.string "site"
     t.string "category"
     t.string "uf"
-    t.boolean "approval_status", default: false
     t.string "color"
+    t.string "email"
   end
 end
