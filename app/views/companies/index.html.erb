@@ -21,9 +21,9 @@
         <%# Filtros da busca index de companies %>
 
         <div class="select-group select-group-on select-group-off select-flex" data-modal-target="revelar">
-          <%= select_tag :uf, options_for_select(Company.distinct.where(approval_status: true).pluck(:uf).compact.sort, params[:uf]), include_blank: "UF", class: "form-control company-filter company-select" %>
-          <%= select_tag :segment, options_for_select(Company.distinct.where(approval_status: true).pluck(:segment).compact.sort, params[:segment]), include_blank: "Segmento", class: "form-control company-filter company-select" %>
-          <%= select_tag :category, options_for_select(Company.distinct.where(approval_status: true).pluck(:category).compact.sort, params[:category]), include_blank: "Categoria", class: "form-control company-filter company-select" %>
+          <%= select_tag :uf, options_for_select(Company.select(:uf).distinct.pluck(:uf).compact.sort, params[:uf]), include_blank: "UF", class: "form-control company-filter company-select" %>
+          <%= select_tag :segment, options_for_select(Company.select(:segment).distinct.pluck(:segment).compact.sort, params[:segment]), include_blank: "Segmento", class: "form-control company-filter company-select" %>
+          <%= select_tag :category, options_for_select(Company.select(:category).distinct.pluck(:category).compact.sort, params[:category]), include_blank: "Categoria", class: "form-control company-filter company-select" %>
         </div>
 
         <div class="submit-group">

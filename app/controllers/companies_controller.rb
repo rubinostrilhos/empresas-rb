@@ -27,8 +27,11 @@ class CompaniesController < ApplicationController
   end
 
   def update
-    @company.update(company_params)
-    redirect_to company_path(@company)
+    if @company.update(company_params)
+      redirect_to company_path(@company)
+    else
+      render :edit, status: :unprocessable_entity
+    end
   end
 
   def destroy
@@ -49,7 +52,7 @@ class CompaniesController < ApplicationController
 
     companies = companies.where(category: params[:category]) if params[:category].present?
 
-    companies.order(:status)
+    companies
   end
 
   def find_company
@@ -58,8 +61,7 @@ class CompaniesController < ApplicationController
 
   def company_params
     params.require(:company).permit(
-      :name, :email, :contact_email, :phone, :address, :segment,
-      :size, :job_offer, :ruby_stack, :status, :site, :category, :uf, :color, :vote_type
+      :name, :email, :segment, :size, :job_offer, :site, :category, :uf, :color
     )
   end
 end

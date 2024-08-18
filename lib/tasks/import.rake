@@ -11,12 +11,9 @@ namespace :import do
         name: row["Nome"].presence || "'FALTA name'",
         site: row["Site"].presence || "'FALTA site'",
         email: row["Contato"].presence || "faltaoemail@email.com",
-        phone: row["Telefone"].presence || "'FALTA #{:phone}'",
         category: row["Categoria"].presence || "'FALTA #{:category}'",
         segment: row["Setor"].presence || "'FALTA #{:segment}'",
         uf: row["UF"].presence || "'FALTA #{:uf}'",
-        status: "Ativo",
-        approval_status: true
       }
 
       c = Company.create!(companies_attributes)
